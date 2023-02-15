@@ -1,26 +1,19 @@
-/* Color Theme Swatches in Hex */
-.Stutte:-University-Website-Design-1-hex { color: #032326; }
-.Stutte:-University-Website-Design-2-hex { color: #255459; }
-.Stutte:-University-Website-Design-3-hex { color: #177373; }
-.Stutte:-University-Website-Design-4-hex { color: #F27777; }
-.Stutte:-University-Website-Design-5-hex { color: #D98B8B; }
 
-/* Color Theme Swatches in RGBA */
-.Stutte:-University-Website-Design-1-rgba { color: rgba(3, 34, 38, 1); }
-.Stutte:-University-Website-Design-2-rgba { color: rgba(37, 84, 89, 1); }
-.Stutte:-University-Website-Design-3-rgba { color: rgba(22, 114, 114, 1); }
-.Stutte:-University-Website-Design-4-rgba { color: rgba(242, 118, 118, 1); }
-.Stutte:-University-Website-Design-5-rgba { color: rgba(216, 138, 138, 1); }
 
-/* Color Theme Swatches in HSLA */
-.Stutte:-University-Website-Design-1-hsla { color: hsla(185, 85, 8, 1); }
-.Stutte:-University-Website-Design-2-hsla { color: hsla(185, 40, 24, 1); }
-.Stutte:-University-Website-Design-3-hsla { color: hsla(180, 66, 27, 1); }
-.Stutte:-University-Website-Design-4-hsla { color: hsla(0, 82, 70, 1); }
-.Stutte:-University-Website-Design-5-hsla { color: hsla(0, 50, 69, 1); }
- 
 
-*{
-    font-family: 'Noto Sans Display', sans-serif;
-font-family: 'Paytone One', sans-serif;
+
+
+
+
+
+
+/* NavBar */
+.navbar{
+    padding: 1.2rem;
+    background-color: #212529;
+}
+
+.navbar-collapse{
+    align-items: center ;
+    justify-content: flex-end;
 }
