@@ -67,6 +67,5 @@ fetch('assets/data/colaboradores/colaboradores.json')
                 collaboratorsList.insertAdjacentHTML('beforeend', collaboratorCardHTML);
             });
         })
-        .catch(error => console.error('Error al cargar colaboradores:', error));
-
+        .catch(error => console.error('Error al cargar colaboradores:', error))
 });
