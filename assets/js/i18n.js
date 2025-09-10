@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         element.textContent = translations[key];
                     }
                 });
+                document.documentElement.lang = lang;
                 localStorage.setItem('lang', lang);
             })
             .catch(error => console.error('Error loading language file:', error));
