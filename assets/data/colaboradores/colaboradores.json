@@ -4,7 +4,7 @@
             "id": "colaborador-1",
             "nombre": "Nombre Colaborador 1",
             "puesto": "Diseñador UX/UI Senior",
-            "imagen": "assets/images/colaboradores/colega-1.webp",
+            "imagen": "assets/images/colab-1.svg",
             "social": {
                 "linkedin": "#",
                 "github": "#"
@@ -14,7 +14,7 @@
             "id": "colaborador-2",
             "nombre": "Nombre Colaborador 2",
             "puesto": "Desarrollador Back-end",
-            "imagen": "assets/images/colaboradores/colega-2.webp",
+            "imagen": "assets/images/colab-2.svg",
             "social": {
                 "linkedin": "#",
                 "twitter": "#"
@@ -24,7 +24,7 @@
             "id": "colaborador-3",
             "nombre": "Nombre Colaborador 3",
             "puesto": "Consultor de SEO",
-            "imagen": "assets/images/colaboradores/colega-3.webp",
+            "imagen": "assets/images/colab-3.svg",
             "social": {
                 "linkedin": "#",
                 "website": "#"
