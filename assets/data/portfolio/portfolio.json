@@ -1,0 +1,46 @@
+{
+    "proyectos": [
+        {
+            "id": "proyecto-salon",
+            "titulo": "Proyecto Web Corporativo",
+            "descripcion": "Diseño y desarrollo de un sitio web para una empresa de consultoría.",
+            "imagen_min": "assets/images/proyectos/proyecto-1-min.webp",
+            "categoria": ["web", "ui-ux"]
+        },
+        {
+            "id": "proyecto-coach",
+            "titulo": "Tienda Online de Artesanía",
+            "descripcion": "Creación de una tienda online moderna y funcional con WordPress.",
+            "imagen_min": "assets/images/proyectos/proyecto-2-min.webp",
+            "categoria": ["ecommerce", "web"]
+        },
+        {
+            "id": "proyecto-tienda",
+            "titulo": "Rediseño de Aplicación Móvil",
+            "descripcion": "Mejora de la usabilidad y la interfaz para una aplicación de salud.",
+            "imagen_min": "assets/images/proyectos/proyecto-3-min.webp",
+            "categoria": ["ui-ux", "branding"]
+        },
+        {
+            "id": "proyecto-4",
+            "titulo": "Sitio Web Personal Creativo",
+            "descripcion": "Diseño de portafolio online para un artista con un branding único.",
+            "imagen_min": "assets/images/proyectos/proyecto-4-min.webp",
+            "categoria": ["web", "branding"]
+        },
+        {
+            "id": "proyecto-5",
+            "titulo": "Plataforma de Cursos Online",
+            "descripcion": "Creación de un marketplace para cursos con pasarela de pagos integrada.",
+            "imagen_min": "assets/images/proyectos/proyecto-5-min.webp",
+            "categoria": ["ecommerce", "ui-ux"]
+        },
+        {
+            "id": "proyecto-6",
+            "titulo": "Landing Page de Campaña",
+            "descripcion": "Diseño y desarrollo de una landing page optimizada para conversión.",
+            "imagen_min": "assets/images/proyectos/proyecto-6-min.webp",
+            "categoria": ["web"]
+        }
+    ]
+}

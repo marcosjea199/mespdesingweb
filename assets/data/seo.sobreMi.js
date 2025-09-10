@@ -1,0 +1,1 @@
+window.SEO_PAGE = {"title": "Sobre mí — Jhon Doe | Tu Marca", "description": "Soy Jhon Doe, diseñador UI y desarrollador frontend con 10+ años de experiencia en España. WordPress + Elementor.", "canonical": "https://tudominio.es/sobre-mi/", "breadcrumbs": [["Inicio", "https://tudominio.es/"], ["Sobre mí", "https://tudominio.es/sobre-mi/"]]};

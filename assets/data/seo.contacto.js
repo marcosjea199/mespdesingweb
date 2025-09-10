@@ -1,0 +1,1 @@
+window.SEO_PAGE = {"title": "Contacto — Hablemos de tu proyecto | Tu Marca", "description": "Escríbeme y te respondo en menos de 24h. También WhatsApp y LinkedIn.", "canonical": "https://tudominio.es/contacto/", "breadcrumbs": [["Inicio", "https://tudominio.es/"], ["Contacto", "https://tudominio.es/contacto/"]]};

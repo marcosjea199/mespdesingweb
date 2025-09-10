@@ -30,14 +30,13 @@
 
     <link href="assets/css/base.css" rel="stylesheet">
     <link href="assets/css/components.css" rel="stylesheet">
-    <link href="assets/css/pages/home.css" rel="stylesheet">
+    <link href="assets/css/pages/contacto.css" rel="stylesheet">
 
     <script src="assets/js/seo.js" defer></script>
     <script src="assets/js/i18n.js" defer></script>
     <script src="assets/js/theme.js" defer></script>
-    <script src="assets/js/pages/home.js" defer></script>
 </head>
-<body data-page-id="index">
+<body data-page-id="contacto">
 
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-sm py-3">
@@ -71,54 +70,74 @@
     </header>
 
     <main>
-        <section class="hero-section text-center py-5">
+        <section class="contact-form-section py-5">
             <div class="container">
-                <h1 class="display-3 fw-bold" data-i18n="hero_titulo">Hola, soy Tu Nombre. Desarrollador Web.</h1>
-                <p class="lead mt-3" data-i18n="hero_subtitulo">Transformo ideas en experiencias digitales que funcionan. Te ayudo a crear un sitio web que refleje tu marca y conecte con tus clientes.</p>
-                <a href="portfolio.html" class="btn btn-primary btn-lg mt-4" data-i18n="btn_ver_portfolio">Ver Portafolio</a>
-                <a href="contacto.html" class="btn btn-outline-primary btn-lg mt-4 ms-3" data-i18n="btn_contactar">Contactar</a>
-            </div>
-        </section>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <h1 class="display-3 fw-bold text-center mb-4" data-i18n="contacto_titulo_principal">Hablemos de tu Proyecto</h1>
+                        <p class="lead text-muted text-center mb-5" data-i18n="contacto_subtitulo">Estoy listo para ayudarte a crear una presencia digital que destaque. Completa el formulario y te responderé lo antes posible.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 mb-4">
+                        <h3 class="h4 fw-bold mb-3" data-i18n="form_titulo">Envía un Mensaje</h3>
+                        <form action="mailto:tu-email@ejemplo.com" method="post" enctype="text/plain">
+                            <div class="mb-3">
+                                <label for="nombre" class="form-label" data-i18n="form_nombre">Tu Nombre</label>
+                                <input type="text" class="form-control" id="nombre" name="nombre" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label" data-i18n="form_email">Tu Email</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="mensaje" class="form-label" data-i18n="form_mensaje">Tu Mensaje</label>
+                                <textarea class="form-control" id="mensaje" name="mensaje" rows="4" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-lg fw-bold w-100" data-i18n="btn_enviar">Enviar Mensaje</button>
+                        </form>
+                        <div class="text-center mt-4">
+                            <p class="text-muted" data-i18n="aviso_mailto">Al hacer clic en "Enviar", se abrirá tu aplicación de correo para completar el envío.</p>
+                        </div>
+                    </div>
 
-        <section class="services-home-section py-5">
-            <div class="container">
-                <h2 class="display-5 fw-bold text-center mb-5" data-i18n="section_servicios_titulo">Servicios que te ayudarán a crecer</h2>
-                <div class="row text-center">
-                    <div class="col-md-4 mb-4">
-                        <i class="bi bi-code-slash display-4 text-primary mb-3"></i>
-                        <h3 class="h4 fw-bold">Desarrollo Web a Medida</h3>
-                        <p class="text-muted">Creación de sitios web únicos, rápidos y seguros, optimizados para una experiencia de usuario excepcional.</p>
-                    </div>
-                    <div class="col-md-4 mb-4">
-                        <i class="bi bi-cart4 display-4 text-primary mb-3"></i>
-                        <h3 class="h4 fw-bold">E-commerce</h3>
-                        <p class="text-muted">Desarrollo de tiendas online robustas y fáciles de gestionar que convierten visitantes en clientes.</p>
-                    </div>
-                    <div class="col-md-4 mb-4">
-                        <i class="bi bi-search display-4 text-primary mb-3"></i>
-                        <h3 class="h4 fw-bold">Optimización SEO</h3>
-                        <p class="text-muted">Mejoro la visibilidad de tu sitio web para que los clientes potenciales te encuentren en Google y otros buscadores.</p>
+                    <div class="col-lg-6">
+                        <h3 class="h4 fw-bold mb-3" data-i18n="datos_contacto_titulo">O contáctame directamente</h3>
+                        <div class="d-flex align-items-start mb-3">
+                            <i class="bi bi-geo-alt-fill text-primary fs-4 me-3"></i>
+                            <div>
+                                <h5 class="fw-bold" data-i18n="ubicacion">Ubicación</h5>
+                                <p class="text-muted">Barcelona, España</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-start mb-3">
+                            <i class="bi bi-envelope-fill text-primary fs-4 me-3"></i>
+                            <div>
+                                <h5 class="fw-bold" data-i18n="email">Email</h5>
+                                <p class="text-muted">tu-email@ejemplo.com</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-start mb-3">
+                            <i class="bi bi-phone-fill text-primary fs-4 me-3"></i>
+                            <div>
+                                <h5 class="fw-bold" data-i18n="telefono">Teléfono</h5>
+                                <p class="text-muted">+34 123 456 789</p>
+                            </div>
+                        </div>
+                        <h5 class="fw-bold mb-3" data-i18n="redes_sociales">Redes Sociales</h5>
+                        <a href="#" class="text-decoration-none me-3"><i class="bi bi-linkedin fs-4 text-primary"></i></a>
+                        <a href="#" class="text-decoration-none me-3"><i class="bi bi-github fs-4 text-primary"></i></a>
+                        <a href="#" class="text-decoration-none me-3"><i class="bi bi-instagram fs-4 text-primary"></i></a>
+                        <a href="#" class="text-decoration-none me-3"><i class="bi bi-twitter-x fs-4 text-primary"></i></a>
                     </div>
                 </div>
             </div>
         </section>
-        
-        <section class="featured-portfolio-section bg-light py-5">
-            <div class="container">
-                <h2 class="display-5 fw-bold text-center mb-5" data-i18n="section_portfolio_titulo">Mis últimos proyectos</h2>
-                <div id="home-projects-list" class="row">
-                    </div>
-            </div>
-        </section>
 
-        <section class="collaborators-section py-5">
-            <div class="container">
-                <h2 class="display-5 fw-bold text-center mb-5" data-i18n="section_colaboradores_titulo">Con la confianza de las mejores marcas</h2>
-                <div id="collaborators-list" class="row justify-content-center align-items-center g-4">
-                    </div>
-            </div>
+        <section class="map-section">
+            <h3 class="visually-hidden">Ubicación en Google Maps</h3>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3198.854087968434!2d-5.992648824248598!3d37.38914617205161!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd126c8b9d628d0b%3A0x600b3e5d3c8c5123!2sPlaza%20de%20Espa%C3%B1a!5e0!3m2!1ses!2ses!4v1715694801198!5m2!1ses!2ses" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </section>
-
     </main>
 
     <footer class="bg-dark text-white pt-5 pb-4">

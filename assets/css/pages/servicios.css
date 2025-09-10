@@ -1,0 +1,70 @@
+/* --- Sección de Héroe para Servicios --- */
+.servicios-hero {
+    padding-top: 8rem;
+    padding-bottom: 3rem;
+}
+
+.servicios-hero h1 {
+    font-family: var(--font-heading);
+    font-weight: 900;
+}
+
+/* --- Detalle de los Servicios --- */
+.servicios-detalle .service-block {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #f8f9fa; /* Color de fondo sutil para cada bloque */
+}
+
+.servicios-detalle .service-block:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+}
+
+.servicios-detalle h3 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+}
+
+.servicios-detalle .bi {
+    color: var(--bs-primary);
+}
+
+.servicios-detalle .list-unstyled li {
+    font-weight: 600;
+}
+
+/* --- CTA Final (Mismos estilos que en index.css) --- */
+.contact-cta-section {
+    background-color: #0d6efd;
+    color: #fff;
+    padding: 6rem 0;
+}
+
+.contact-cta-section h2 {
+    font-family: var(--font-heading);
+    font-weight: 900;
+}
+
+/* --- Sección de Planes y Precios --- */
+.planes-section {
+    background-color: #f8f9fa; /* Fondo sutil para la sección */
+}
+
+.planes-section h2 {
+    font-family: var(--font-heading);
+    font-weight: 900;
+}
+
+.planes-section .pricing-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.planes-section .pricing-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+}
+
+.planes-section .pricing-card .card-title {
+    font-family: var(--font-heading);
+    font-weight: 700;
+}

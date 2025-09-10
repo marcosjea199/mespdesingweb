@@ -1,0 +1,40 @@
+/* --- Estilos para la Página Individual de Proyecto --- */
+
+/* Sección de Héroe */
+.project-hero {
+    background-color: #f8f9fa;
+    padding: 8rem 0 3rem 0;
+}
+
+.project-hero h1 {
+    font-family: var(--font-heading);
+    font-weight: 900;
+}
+
+/* Contenido Principal del Proyecto */
+.project-content .project-info-list li {
+    font-size: 1.1rem;
+}
+
+.project-content .sticky-info {
+    position: sticky;
+    top: 2rem; /* Se pegará a 2rem del top de la pantalla */
+}
+
+/* Galería de Imágenes */
+.project-gallery-section {
+    background-color: #f8f9fa;
+}
+
+.project-gallery-section .hover-grow {
+    transition: transform 0.3s ease-in-out;
+}
+
+.project-gallery-section .hover-grow:hover {
+    transform: scale(1.02);
+}
+
+/* CTA Final */
+.contact-cta-section {
+    background-color: #0d6efd;
+}

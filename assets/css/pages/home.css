@@ -1,0 +1,256 @@
+/* --- Sección de Héroe --- */
+.hero-section {
+    position: relative;
+    overflow: hidden;
+    padding-top: 0;
+    padding-bottom: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.hero-content-wrapper {
+    position: relative;
+    z-index: 2;
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+}
+
+/* Estilos para la imagen de fondo */
+.image-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    /* Si quieres que la imagen se mueva con parallax, puedes añadir:
+       background-attachment: fixed;
+    */
+}
+
+.hero-bg-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Overlay semitransparente sobre la imagen */
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Overlay oscuro semitransparente */
+    z-index: 1;
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.hero-section .lead {
+    font-size: 1.5rem;
+    max-width: 600px;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+@media (min-width: 992px) {
+    .hero-section h1 {
+        font-size: 4.5rem;
+    }
+}
+
+/* --- Sección de Servicios --- */
+.servicios-section {
+    background-color: #f8f9fa; /* Fondo gris claro para diferenciar la sección */
+}
+
+.servicios-section h2 {
+    font-family: var(--font-heading);
+    font-weight: 900;
+}
+
+.servicios-section .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.servicios-section .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+}
+
+.servicios-section .card-body {
+    padding: 2.5rem 1.5rem;
+}
+
+.servicios-section .card-title {
+    font-family: var(--font-heading);
+    font-weight: 700;
+}
+
+.servicios-section .bi {
+    color: #007bff; /* Color del icono */
+}
+
+/* --- Sección de Proyectos --- */
+.proyectos-section .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.proyectos-section .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+}
+
+.proyectos-section .card-img-top {
+    object-fit: cover;
+    height: 250px; /* Altura fija para que todas las imágenes sean consistentes */
+}
+
+.proyectos-section h2 {
+    font-family: var(--font-heading);
+    font-weight: 900;
+}
+
+.proyectos-section .card-title {
+    font-family: var(--font-heading);
+    font-weight: 700;
+}
+
+/* --- Sección Sobre Mí --- */
+.sobre-mi-section {
+    background-color: #f8f9fa; /* Fondo gris claro */
+}
+
+.sobre-mi-section h2, .sobre-mi-section h3 {
+    font-family: var(--font-heading);
+    font-weight: 900;
+}
+
+.sobre-mi-section img {
+    max-width: 250px; /* Tamaño máximo para la imagen de perfil */
+    height: auto;
+    object-fit: cover;
+}
+
+// secciones //
+.about-summary-section {
+    padding-top: 5rem;    /* Espaciado superior */
+    padding-bottom: 5rem; /* Espaciado inferior */
+    background-color: #f8f9fa; /* Un color de fondo claro para diferenciarla */
+}
+
+.about-summary-section h2 {
+    font-size: 2.5rem;
+    font-weight: 700; /* Negrita */
+    color: #343a40; /* Color oscuro para el texto */
+    margin-bottom: 1.5rem;
+}
+
+.about-summary-section .lead {
+    font-size: 1.25rem;
+    color: #6c757d; /* Gris para el texto de introducción */
+}
+
+.about-summary-section img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    border: 5px solid #ffffff; /* Un borde blanco sutil */
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15); /* Sombra para profundidad */
+}
+
+@media (max-width: 768px) {
+    .about-summary-section img {
+        margin-bottom: 2rem;
+    }
+}
+
+/* --- Sección de Colaboradores --- */
+.colaboradores-section {
+    background-color: #f8f9fa; /* Fondo gris claro */
+}
+
+.colaboradores-section h2 {
+    font-family: var(--font-heading);
+    font-weight: 900;
+}
+
+.colaboradores-section .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    padding: 1.5rem;
+}
+
+.colaboradores-section .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+}
+
+.colaboradores-section .card-img-top {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border: 3px solid var(--bs-primary);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.colaboradores-section .card-title {
+    font-family: var(--font-heading);
+    font-weight: 700;
+}
+
+.colaboradores-section .social-icons a {
+    transition: transform 0.8s ease;
+    display: inline-block;
+}
+
+.colaboradores-section .social-icons a:hover {
+    transform: translateY(-3px);
+}
+/* Estilos para los controles del carrusel */
+#colaboradoresCarousel .carousel-control-prev,
+#colaboradoresCarousel .carousel-control-next {
+    filter: invert(100%);
+    width: 5%;
+}
+
+/* Ajuste de los indicadores del carrusel para que no se peguen a las tarjetas */
+#colaboradoresCarousel .carousel-indicators {
+    bottom: 0;
+}
+
+/* --- Sección de Llamada a la Acción (CTA) --- */
+.cta-section {
+    background-color: #0d6efd; /* Color azul de Bootstrap */
+    color: #fff;
+    padding: 6rem 0; /* Padding superior e inferior para más espacio */
+}
+
+.cta-section h2 {
+    font-family: var(--font-heading);
+    font-weight: 900;
+}
+
+.cta-section .btn-light {
+    color: #0d6efd;
+}
+
+.cta-section .btn-light:hover {
+    background-color: #f8f9fa;
+    color: #0d6efd;
+    border-color: #f8f9fa;
+}

@@ -1,0 +1,12 @@
+{
+    "id": "politica-privacidad",
+    "title": "Política de Privacidad | Tu Nombre",
+    "description": "Nuestra política de privacidad describe cómo recopilamos, usamos y protegemos tus datos personales en este sitio web. La seguridad de tus datos es nuestra prioridad.",
+    "keywords": "política de privacidad, datos personales, protección de datos, aviso legal, GDPR",
+    "og_title": "Política de Privacidad",
+    "og_description": "Conoce cómo gestionamos y protegemos tu información personal al utilizar nuestros servicios.",
+    "og_image": "assets/images/og-legal.jpg",
+    "twitter_card": "summary_large_image",
+    "twitter_site": "@tu_usuario_twitter",
+    "twitter_creator": "@tu_usuario_twitter"
+}

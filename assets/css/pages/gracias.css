@@ -1,0 +1,5 @@
+/* Centrado del contenido principal */
+.gracias-page h1 {
+    font-family: var(--font-heading);
+    font-weight: 900;
+}

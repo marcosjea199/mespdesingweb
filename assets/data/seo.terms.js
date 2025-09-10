@@ -1,0 +1,1 @@
+window.SEO_PAGE = {"title": "Términos y Condiciones | Tu Marca", "description": "Condiciones de contratación y uso del sitio web.", "canonical": "https://tudominio.es/legal/terminos-condiciones/", "breadcrumbs": [["Inicio", "https://tudominio.es/"], ["Legal", "https://tudominio.es/legal/"], ["Términos y condiciones", "https://tudominio.es/legal/terminos-condiciones/"]]};

@@ -1,0 +1,80 @@
+document.addEventListener('DOMContentLoaded', function() {
+
+    // --- Carga dinámica de Proyectos en la página de inicio ---
+    const projectListContainer = document.getElementById('home-projects-list');
+
+    fetch('assets/data/portfolio/projects.json')
+        .then(response => response.json())
+        .then(data => {
+            // Mostrar solo los 3 primeros proyectos para la página de inicio
+            const projectsToShow = data.proyectos.slice(0, 3); 
+            projectsToShow.forEach(project => {
+                const projectCardHTML = `
+                    <div class="col-lg-4 mb-4">
+                        <a href="portfolio/${project.id}.html" class="text-decoration-none">
+                            <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden home-project-card">
+                                <img src="${project.imagen_min}" class="card-img-top" alt="Captura de pantalla del ${project.titulo}">
+                                <div class="card-body text-center">
+                                    <h3 class="card-title fw-bold fs-5">${project.titulo}</h3>
+                                    <p class="card-text text-muted">${project.descripcion}</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                `;
+                projectListContainer.insertAdjacentHTML('beforeend', projectCardHTML);
+            });
+        })
+        .catch(error => console.error('Error al cargar proyectos:', error));
+
+
+    // --- Carga dinámica de Colaboradores (Carrusel) ---
+const collaboratorsCarouselInner = document.getElementById('collaborators-carousel-inner');
+const itemsPerSlide = 3; // Define cuántas tarjetas por slide
+
+fetch('assets/data/colaboradores/colaboradores.json')
+    .then(response => response.json())
+    .then(data => {
+        const collaborators = data.colaboradores;
+        let slideIndex = 0;
+        
+        while (slideIndex < collaborators.length) {
+            const isFirstSlide = slideIndex === 0;
+            const carouselItem = document.createElement('div');
+            carouselItem.className = `carousel-item ${isFirstSlide ? 'active' : ''}`;
+            
+            const row = document.createElement('div');
+            row.className = 'row g-4';
+            
+            for (let i = 0; i < itemsPerSlide; i++) {
+                const collaborator = collaborators[slideIndex + i];
+                if (collaborator) {
+                    const socialLinks = Object.keys(collaborator.social).map(platform => `
+                        <a href="${collaborator.social[platform]}" class="text-decoration-none text-dark me-2">
+                            <i class="bi bi-${platform}"></i>
+                        </a>
+                    `).join('');
+
+                    const collaboratorCardHTML = `
+                        <div class="col-md-4 text-center">
+                            <div class="p-4 rounded-4 shadow-sm border h-100 collaborator-card">
+                                <img src="${collaborator.imagen}" alt="Foto de ${collaborator.nombre}" class="img-fluid rounded-circle mb-3" style="width: 120px; height: 120px; object-fit: cover;">
+                                <h3 class="fw-bold fs-5">${collaborator.nombre}</h3>
+                                <p class="text-muted">${collaborator.puesto}</p>
+                                ${socialLinks}
+                            </div>
+                        </div>
+                    `;
+                    row.insertAdjacentHTML('beforeend', collaboratorCardHTML);
+                }
+            }
+
+            carouselItem.appendChild(row);
+            collaboratorsCarouselInner.appendChild(carouselItem);
+            slideIndex += itemsPerSlide;
+        }
+        
+    })
+    .catch(error => console.error('Error al cargar colaboradores:', error));
+
+});

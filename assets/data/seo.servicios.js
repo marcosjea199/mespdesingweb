@@ -1,0 +1,1 @@
+window.SEO_PAGE = {"title": "Servicios de Diseño Web, Landing Pages y Asesoramiento | Tu Marca", "description": "Paquetes claros: Landing Page, Web básica y Asesoramiento. Precios transparentes y enfoque en conversión.", "canonical": "https://tudominio.es/servicios/", "breadcrumbs": [["Inicio", "https://tudominio.es/"], ["Servicios", "https://tudominio.es/servicios/"]]};

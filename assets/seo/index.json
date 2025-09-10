@@ -1,0 +1,12 @@
+{
+    "id": "index",
+    "title": "Diseñador y Desarrollador Web | Tu Nombre",
+    "description": "Portafolio oficial de Tu Nombre, especialista en el diseño y desarrollo de sitios web modernos, intuitivos y optimizados para el crecimiento de tu negocio.",
+    "keywords": "portafolio, diseñador web, desarrollador web, freelancer, páginas web a medida, diseño responsive, SEO, e-commerce, Madrid, Barcelona",
+    "og_title": "Tu Nombre | Creando tu presencia digital",
+    "og_description": "Transformo tus ideas en experiencias digitales que conectan con tu público. Servicios de diseño y desarrollo web profesionales.",
+    "og_image": "assets/images/og-index.jpg",
+    "twitter_card": "summary_large_image",
+    "twitter_site": "@tu_usuario_twitter",
+    "twitter_creator": "@tu_usuario_twitter"
+}

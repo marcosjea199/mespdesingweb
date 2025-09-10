@@ -1,0 +1,6 @@
+/* Centrado del contenido principal */
+.error-404-section h1,
+.error-404-section h2 {
+    font-family: var(--font-heading);
+    font-weight: 900;
+}

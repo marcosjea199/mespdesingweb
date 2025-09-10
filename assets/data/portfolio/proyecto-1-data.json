@@ -1,0 +1,27 @@
+{
+    "id": "proyecto-1",
+    "titulo": "Diseño Web Corporativo",
+    "subtitulo": "Solución digital para una empresa de consultoría",
+    "categoria": ["Web", "UI/UX"],
+    "fecha": "Septiembre 2024",
+    "cliente": "[Nombre del Cliente]",
+    "url_proyecto": "https://www.ejemplodeproyecto.com",
+    "resumen": "Sección de Resumen: Una breve introducción que describe el propósito y el éxito del proyecto. Esta sección debe captar la atención del lector y explicar el valor de tu trabajo.",
+    "secciones": [
+        {
+            "titulo_seccion": "El Problema y el Desafío",
+            "descripcion": "Descripción del problema que el cliente enfrentaba y los desafíos específicos que debiste superar para resolverlo. Por ejemplo, 'el sitio web anterior era obsoleto y no era responsive...'",
+            "imagen_url": "assets/images/proyectos/proyecto-1-detalle-1.webp"
+        },
+        {
+            "titulo_seccion": "Mi Proceso y la Solución",
+            "descripcion": "Detalla el proceso de trabajo: investigación, wireframing, diseño de la interfaz y desarrollo. Explica las decisiones que tomaste y cómo la solución final resuelve el problema del cliente.",
+            "imagen_url": "assets/images/proyectos/proyecto-1-detalle-2.webp"
+        },
+        {
+            "titulo_seccion": "Resultados del Proyecto",
+            "descripcion": "Cuantifica los resultados. ¿Mejoró la tasa de conversión? ¿Aumentó el tráfico? Incluye testimonios o métricas para demostrar el valor de tu trabajo.",
+            "imagen_url": "assets/images/proyectos/proyecto-1-detalle-3.webp"
+        }
+    ]
+}

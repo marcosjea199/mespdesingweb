@@ -30,14 +30,13 @@
 
     <link href="assets/css/base.css" rel="stylesheet">
     <link href="assets/css/components.css" rel="stylesheet">
-    <link href="assets/css/pages/home.css" rel="stylesheet">
+    <link href="assets/css/pages/sobre-mi.css" rel="stylesheet">
 
     <script src="assets/js/seo.js" defer></script>
     <script src="assets/js/i18n.js" defer></script>
     <script src="assets/js/theme.js" defer></script>
-    <script src="assets/js/pages/home.js" defer></script>
 </head>
-<body data-page-id="index">
+<body data-page-id="sobre-mi">
 
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-sm py-3">
@@ -71,54 +70,65 @@
     </header>
 
     <main>
-        <section class="hero-section text-center py-5">
+        <section class="about-hero-section text-center py-5">
             <div class="container">
-                <h1 class="display-3 fw-bold" data-i18n="hero_titulo">Hola, soy Tu Nombre. Desarrollador Web.</h1>
-                <p class="lead mt-3" data-i18n="hero_subtitulo">Transformo ideas en experiencias digitales que funcionan. Te ayudo a crear un sitio web que refleje tu marca y conecte con tus clientes.</p>
-                <a href="portfolio.html" class="btn btn-primary btn-lg mt-4" data-i18n="btn_ver_portfolio">Ver Portafolio</a>
-                <a href="contacto.html" class="btn btn-outline-primary btn-lg mt-4 ms-3" data-i18n="btn_contactar">Contactar</a>
+                <img src="assets/images/foto-perfil.webp" alt="Foto de perfil de Tu Nombre" class="img-fluid rounded-circle mb-4 shadow" width="200" height="200">
+                <h1 class="display-3 fw-bold" data-i18n="sobre_mi_titulo_principal">Hola, Soy Tu Nombre.</h1>
+                <p class="lead mt-3" data-i18n="sobre_mi_subtitulo">Diseñador y Desarrollador Web con pasión por crear experiencias digitales increíbles.</p>
             </div>
         </section>
 
-        <section class="services-home-section py-5">
+        <section class="about-story-section py-5">
             <div class="container">
-                <h2 class="display-5 fw-bold text-center mb-5" data-i18n="section_servicios_titulo">Servicios que te ayudarán a crecer</h2>
+                <div class="row align-items-center">
+                    <div class="col-lg-6 mb-4 mb-lg-0">
+                        <h2 class="display-5 fw-bold mb-4" data-i18n="sobre_mi_historia_titulo">Mi Historia y Filosofía</h2>
+                        <p class="lead text-muted" data-i18n="sobre_mi_historia_parrafo_1">Comencé mi carrera en el mundo digital con una curiosidad insaciable por cómo funcionaban las páginas web. Lo que empezó como un pasatiempo se convirtió en una pasión y, finalmente, en mi profesión.</p>
+                        <p class="text-muted" data-i18n="sobre_mi_historia_parrafo_2">Mi filosofía es simple: una buena página web no solo debe ser atractiva visualmente, sino también funcional, accesible y, lo más importante, debe resolver un problema para el usuario. Me especializo en traducir ideas complejas en soluciones digitales sencillas y efectivas.</p>
+                    </div>
+                    <div class="col-lg-6">
+                        <img src="assets/images/sobre-mi-imagen.webp" alt="Ilustración sobre mi historia" class="img-fluid rounded shadow">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-skills-section bg-light py-5">
+            <div class="container">
+                <h2 class="display-5 fw-bold text-center mb-5" data-i18n="sobre_mi_habilidades_titulo">Mis Habilidades</h2>
                 <div class="row text-center">
                     <div class="col-md-4 mb-4">
-                        <i class="bi bi-code-slash display-4 text-primary mb-3"></i>
-                        <h3 class="h4 fw-bold">Desarrollo Web a Medida</h3>
-                        <p class="text-muted">Creación de sitios web únicos, rápidos y seguros, optimizados para una experiencia de usuario excepcional.</p>
+                        <div class="card p-4 h-100">
+                            <i class="bi bi-palette-fill display-4 text-primary mb-3"></i>
+                            <h3 class="h5 fw-bold" data-i18n="habilidad_diseno_titulo">Diseño UI/UX</h3>
+                            <p class="text-muted" data-i18n="habilidad_diseno_parrafo">Wireframing, prototipado y diseño visual para una experiencia de usuario intuitiva.</p>
+                        </div>
                     </div>
                     <div class="col-md-4 mb-4">
-                        <i class="bi bi-cart4 display-4 text-primary mb-3"></i>
-                        <h3 class="h4 fw-bold">E-commerce</h3>
-                        <p class="text-muted">Desarrollo de tiendas online robustas y fáciles de gestionar que convierten visitantes en clientes.</p>
+                        <div class="card p-4 h-100">
+                            <i class="bi bi-file-earmark-code-fill display-4 text-primary mb-3"></i>
+                            <h3 class="h5 fw-bold" data-i18n="habilidad_frontend_titulo">Desarrollo Front-end</h3>
+                            <p class="text-muted" data-i18n="habilidad_frontend_parrafo">HTML, CSS, JavaScript, y frameworks modernos como React o Vue.</p>
+                        </div>
                     </div>
                     <div class="col-md-4 mb-4">
-                        <i class="bi bi-search display-4 text-primary mb-3"></i>
-                        <h3 class="h4 fw-bold">Optimización SEO</h3>
-                        <p class="text-muted">Mejoro la visibilidad de tu sitio web para que los clientes potenciales te encuentren en Google y otros buscadores.</p>
+                        <div class="card p-4 h-100">
+                            <i class="bi bi-server display-4 text-primary mb-3"></i>
+                            <h3 class="h5 fw-bold" data-i18n="habilidad_backend_titulo">Desarrollo Back-end</h3>
+                            <p class="text-muted" data-i18n="habilidad_backend_parrafo">Manejo de bases de datos y lógica del servidor con Node.js, Python o PHP.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
         
-        <section class="featured-portfolio-section bg-light py-5">
+        <section class="cta-section text-center py-5 bg-dark text-white">
             <div class="container">
-                <h2 class="display-5 fw-bold text-center mb-5" data-i18n="section_portfolio_titulo">Mis últimos proyectos</h2>
-                <div id="home-projects-list" class="row">
-                    </div>
+                <h2 class="display-5 fw-bold" data-i18n="cta_titulo">¿Listo para empezar tu proyecto?</h2>
+                <p class="lead mt-3" data-i18n="cta_parrafo">Transforma tu idea en realidad con una solución web profesional.</p>
+                <a href="contacto.html" class="btn btn-primary btn-lg mt-4" data-i18n="btn_contactar_cta">Contactar para un presupuesto</a>
             </div>
         </section>
-
-        <section class="collaborators-section py-5">
-            <div class="container">
-                <h2 class="display-5 fw-bold text-center mb-5" data-i18n="section_colaboradores_titulo">Con la confianza de las mejores marcas</h2>
-                <div id="collaborators-list" class="row justify-content-center align-items-center g-4">
-                    </div>
-            </div>
-        </section>
-
     </main>
 
     <footer class="bg-dark text-white pt-5 pb-4">

@@ -1,0 +1,1 @@
+window.SEO_PAGE = {"title": "Portfolio — Proyectos reales con foco en conversión | Tu Marca", "description": "Selección de proyectos: landings, webs básicas y asesoramiento. Diseño UI, velocidad y SEO.", "canonical": "https://tudominio.es/portfolio/", "breadcrumbs": [["Inicio", "https://tudominio.es/"], ["Portfolio", "https://tudominio.es/portfolio/"]]};

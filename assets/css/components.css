@@ -1,0 +1,58 @@
+/* --- Reutilizable: Botones --- */
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: #fff;
+    font-weight: bold;
+    border-radius: 50rem;
+    padding: 0.75rem 2rem;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: var(--primary-color-dark);
+    border-color: var(--primary-color-dark);
+}
+
+.btn-outline-primary {
+    border-radius: 50rem;
+    padding: 0.75rem 2rem;
+    font-weight: bold;
+}
+
+.btn-lg {
+    padding: 1rem 2.5rem;
+}
+
+/* --- Reutilizable: Tarjetas de Proyectos --- */
+.project-card,
+.home-project-card,
+.collaborator-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover,
+.home-project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1) !important;
+}
+
+/* --- Reutilizable: Formulario de Contacto --- */
+.form-control {
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(var(--primary-color-rgb), 0.25);
+}
+
+/* --- Reutilizable: Badges de Categoría --- */
+.badge {
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}

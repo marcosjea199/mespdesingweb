@@ -1,0 +1,1 @@
+window.SEO_PAGE = {"title": "404 — Página no encontrada | Tu Marca", "description": "La página que buscas no existe o fue movida.", "canonical": "https://tudominio.es/404/", "breadcrumbs": [["Inicio", "https://tudominio.es/"], ["404", "https://tudominio.es/404/"]]};

@@ -1,0 +1,48 @@
+/* --- Sección de Héroe para Portafolio --- */
+.portfolio-hero {
+    padding-top: 8rem;
+    padding-bottom: 3rem;
+}
+
+.portfolio-hero h1 {
+    font-family: var(--font-heading);
+    font-weight: 900;
+}
+
+/* --- Galería de Proyectos --- */
+.portfolio-gallery .project-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-gallery .project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+}
+
+.portfolio-gallery .card-img-top {
+    object-fit: cover;
+    height: 250px; /* Altura fija para consistencia visual */
+}
+
+.portfolio-gallery .card-title {
+    font-family: var(--font-heading);
+    font-weight: 700;
+}
+
+/* Estilos para los botones de filtro */
+.portfolio-gallery .btn-outline-primary {
+    border-width: 2px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.portfolio-gallery .btn-outline-primary.active,
+.portfolio-gallery .btn-outline-primary:hover {
+    background-color: var(--bs-primary);
+    color: #fff;
+}
+
+/* Estilos para las tarjetas de proyecto filtradas (ocultas por JS) */
+.portfolio-gallery .project-item.hidden {
+    display: none;
+}

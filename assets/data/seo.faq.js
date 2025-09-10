@@ -1,0 +1,1 @@
+window.SEO_PAGE = {"title": "Preguntas Frecuentes | Tu Marca", "description": "Respuestas rápidas: plazos, SEO, soporte, pagos y garantías.", "canonical": "https://tudominio.es/faq/", "breadcrumbs": [["Inicio", "https://tudominio.es/"], ["FAQs", "https://tudominio.es/faq/"]]};
