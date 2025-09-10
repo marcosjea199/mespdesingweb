@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const projectListContainer = document.getElementById('project-list');
-    const filterButtons = document.querySelectorAll('.portfolio-gallery .btn[data-filter]');
+    // Seleccionar botones de filtrado dentro del contenedor con id "filter-buttons"
+    const filterButtons = document.querySelectorAll('#filter-buttons .btn[data-filter]');
 
     // Función para renderizar los proyectos en el HTML
     function renderProjects(projects) {
