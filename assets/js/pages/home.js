@@ -31,16 +31,28 @@ document.addEventListener('DOMContentLoaded', function() {
     // --- Carga dinámica de Colaboradores ---
     const collaboratorsList = document.getElementById('collaborators-list');
 
-    fetch('assets/data/colaboradores/colaboradores.json')
-        .then(response => response.json())
-        .then(data => {
-            const collaborators = data.colaboradores;
-            collaborators.forEach(collaborator => {
-                const socialLinks = Object.keys(collaborator.social).map(platform => `
-                    <a href="${collaborator.social[platform]}" class="text-decoration-none text-dark me-2">
-                        <i class="bi bi-${platform}"></i>
-                    </a>
-                `).join('');
+fetch('assets/data/colaboradores/colaboradores.json')
+    .then(response => response.json())
+    .then(data => {
+        const collaborators = data.colaboradores;
+        let slideIndex = 0;
+        
+        while (slideIndex < collaborators.length) {
+            const isFirstSlide = slideIndex === 0;
+            const carouselItem = document.createElement('div');
+            carouselItem.className = `carousel-item ${isFirstSlide ? 'active' : ''}`;
+            
+            const row = document.createElement('div');
+            row.className = 'row g-4';
+            
+            for (let i = 0; i < itemsPerSlide; i++) {
+                const collaborator = collaborators[slideIndex + i];
+                if (collaborator) {
+                    const socialLinks = Object.keys(collaborator.social).map(platform => `
+                        <a href="${collaborator.social[platform]}" class="text-decoration-none text-dark me-2">
+                            <i class="bi bi-${platform}"></i>
+                        </a>
+                    `).join('');
 
                 const collaboratorCardHTML = `
                     <div class="col-md-4 text-center">
