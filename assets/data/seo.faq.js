@@ -1,1 +1,1 @@
-window.SEO_PAGE = {"title": "Preguntas Frecuentes | Tu Marca", "description": "Respuestas rápidas: plazos, SEO, soporte, pagos y garantías.", "canonical": "https://tudominio.es/faq/", "breadcrumbs": [["Inicio", "https://tudominio.es/"], ["FAQs", "https://tudominio.es/faq/"]]};
+window.SEO_PAGE = {"title": "Preguntas Frecuentes | Marcos Espinoza", "description": "Respuestas rápidas: plazos, SEO, soporte, pagos y garantías.", "canonical": "https://mespdesingweb.com/faq/", "breadcrumbs": [["Inicio", "https://mespdesingweb.com/"], ["FAQs", "https://mespdesingweb.com/faq/"]]};

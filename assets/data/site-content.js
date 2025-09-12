@@ -11,7 +11,7 @@ window.SITE_CONTENT = {
     },
     sobreMi: {
       chip: "Sobre mí",
-      title: "Hola, soy <span>Jhon Doe</span> — diseño <span>webs y landings</span> que convierten",
+      title: "Hola, soy <span>Marcos Espinoza</span> — diseño <span>webs y landings</span> que convierten",
       subtitle: "<strong>+10 años de experiencia.</strong> WordPress + Elementor. Entrego rápido, con base SEO y foco en resultados.",
       ctas: [
         {"text":"Ver trabajos","href":"portfolio.html","style":"brand"},
@@ -43,7 +43,7 @@ window.SITE_CONTENT = {
     {"q":"¿Soporte y formación?","a":"Incluye formación breve y soporte inicial tras la entrega."}
   ],
   contacto: {
-    "email":"hola@tudominio.es",
+    "email":"hola@mespdesingweb.com",
     "whatsapp":"+34600000000",
     "linkedin":"https://linkedin.com/",
     "instagram":"https://instagram.com/",

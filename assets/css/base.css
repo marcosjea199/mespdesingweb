@@ -1,31 +1,31 @@
 :root {
-  --brand-primary:#1D3D91;
-  --brand-dark:#1F264A;
+  --brand-primary:#253fdb;
+  --brand-dark:#000031;
   --neutral-10:#060911;
-  --neutral-40:#91A5B4;
-  --neutral-60:#F2F6FC;
+  --neutral-40:#F2F2F2;
+  --neutral-60:#FFFFFF;
   --radius:1rem;
 
   /* Definimos variables CSS para las fuentes */
   --font-heading: 'Montserrat', sans-serif;
   --font-body: 'Nunito Sans', sans-serif;
 
-  --primary-color: #6c63ff;
-  --primary-color-dark: #564ad6;
+  --primary-color: #253fdb;
+  --primary-color-dark: #000031;
   --primary-color-rgb: 108, 99, 255;
 
-   --light-bg: #f8f9fa;
-   --primary-bg: #0d6efd;
+   --light-bg: #F2F2F2;
+   --primary-bg: #253fdb;
    --white: #ffffff;
-   --link-color: #007bff;
+   --link-color: #253fdb;
 
   /* Colores del modo claro */
-  --background-color: #f8f9fa;
+  --background-color: #F2F2F2;
   --card-background-color: #ffffff;
-  --text-color: #212529;
-  --muted-text-color: #6c757d;
-  --heading-color: #212529;
-  --border-color: #dee2e6;
+  --text-color: #000031;
+  --muted-text-color: #C3C3C3;
+  --heading-color: #000031;
+  --border-color: #F2F2F2;
   
 }
 
@@ -58,21 +58,21 @@ footer .bi:hover {
 
 /* Modo oscuro */
 body.dark-mode {
-    --background-color: #212529;
-    --card-background-color: #2c3138;
-    --text-color: #f8f9fa;
-    --muted-text-color: #adb5bd;
-    --heading-color: #f8f9fa;
+    --background-color: #000031;
+    --card-background-color: #495057;
+    --text-color: #F2F2F2;
+    --muted-text-color: #C3C3C3;
+    --heading-color: #F2F2F2;
     --border-color: #495057;
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --background-color: #212529;
-        --card-background-color: #2c3138;
-        --text-color: #f8f9fa;
-        --muted-text-color: #adb5bd;
-        --heading-color: #f8f9fa;
+        --background-color: #000031;
+        --card-background-color: #495057;
+        --text-color: #F2F2F2;
+        --muted-text-color: #C3C3C3;
+        --heading-color: #F2F2F2;
         --border-color: #495057;
     }
 }

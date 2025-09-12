@@ -24,7 +24,7 @@
 
 .accordion-button:not(.collapsed) {
     color: var(--link-color); /* Color del texto cuando el acordeón está abierto */
-    background-color: #e9f5ff; /* Color de fondo cuando el acordeón está abierto */
+    background-color: #F2F2F2; /* Color de fondo cuando el acordeón está abierto */
     border-color: var(--link-color);
 }
 

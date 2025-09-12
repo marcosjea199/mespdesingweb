@@ -2,17 +2,17 @@
   "es": {
     "seo": {
       "index": {
-        "title": "Tu Nombre | Desarrollador Web y UX/UI",
+        "title": "Marcos Espinoza | Desarrollador Web y UX/UI",
         "description": "Transformo ideas en experiencias digitales. Desarrollador web especializado en UX/UI, optimización SEO y diseño a medida.",
         "keywords": "desarrollador web, diseñador web, portafolio, UX/UI, SEO, Barcelona, desarrollo a medida, e-commerce"
       },
       "servicios": {
-        "title": "Servicios de Desarrollo Web | Tu Nombre",
+        "title": "Servicios de Desarrollo Web | Marcos Espinoza",
         "description": "Descubre mis servicios: desarrollo web a medida, soluciones de e-commerce y optimización para mejorar el rendimiento de tu sitio.",
         "keywords": "servicios web, desarrollo a medida, e-commerce, SEO, WPO, optimización web"
       },
       "portfolio": {
-        "title": "Portafolio de Proyectos | Tu Nombre",
+        "title": "Portafolio de Proyectos | Marcos Espinoza",
         "description": "Explora mi portafolio de proyectos de desarrollo web. Casos de estudio de sitios web, tiendas online y soluciones personalizadas.",
         "keywords": "portafolio web, proyectos, desarrollo de sitios web, ejemplos de e-commerce, UX/UI"
       },
@@ -32,12 +32,12 @@
       "nav_portfolio": "Portafolio",
       "nav_sobre_mi": "Sobre Mí",
       "nav_contacto": "Contacto",
-      "footer_titulo": "Tu Nombre",
+      "footer_titulo": "Marcos Espinoza",
       "footer_parrafo": "Desarrollo y diseño web profesional para ayudarte a crecer.",
       "footer_enlaces_rapidos": "Enlaces Rápidos",
       "footer_sigueme": "Sígueme",
-      "footer_copyright": "© 2025 Tu Nombre. Todos los derechos reservados.",
-      "hero_titulo": "Hola, soy Tu Nombre. Desarrollador Web.",
+      "footer_copyright": "© 2025 Marcos Espinoza. Todos los derechos reservados.",
+      "hero_titulo": "Hola, soy Marcos Espinoza. Desarrollador Web.",
       "hero_subtitulo": "Transformo ideas en experiencias digitales que funcionan. Te ayudo a crear un sitio web que refleje tu marca y conecte con tus clientes.",
       "btn_ver_portfolio": "Ver Portafolio",
       "btn_contactar": "Contactar",
@@ -78,7 +78,7 @@
       "plan_ecommerce_caract_3": "Pasarela de pagos segura",
       "plan_ecommerce_caract_4": "Funcionalidad de carritos de compra",
       "btn_contacto_plan_ecommerce": "Contactar",
-      "sobre_mi_titulo_principal": "Hola, Soy Tu Nombre.",
+      "sobre_mi_titulo_principal": "Hola, Soy Marcos Espinoza.",
       "sobre_mi_subtitulo": "Diseñador y Desarrollador Web con pasión por crear experiencias digitales increíbles.",
       "sobre_mi_historia_titulo": "Mi Historia y Filosofía",
       "sobre_mi_historia_parrafo_1": "Comencé mi carrera en el mundo digital con una curiosidad insaciable por cómo funcionaban las páginas web. Lo que empezó como un pasatiempo se convirtió en una pasión y, finalmente, en mi profesión.",
@@ -93,7 +93,7 @@
       "contacto_titulo_principal": "Hablemos de tu Proyecto",
       "contacto_subtitulo": "Estoy listo para ayudarte a crear una presencia digital que destaque. Completa el formulario y te responderé lo antes posible.",
       "form_titulo": "Envía un Mensaje",
-      "form_nombre": "Tu Nombre",
+      "form_nombre": "Marcos Espinoza",
       "form_email": "Tu Email",
       "form_mensaje": "Tu Mensaje",
       "btn_enviar": "Enviar Mensaje",
@@ -108,17 +108,17 @@
   "en": {
     "seo": {
       "index": {
-        "title": "Your Name | Web & UX/UI Developer",
+        "title": "Marcos Espinoza | Web & UX/UI Developer",
         "description": "I turn ideas into digital experiences. Web developer specialized in UX/UI, SEO optimization, and custom design.",
         "keywords": "web developer, web designer, portfolio, UX/UI, SEO, Barcelona, custom development, e-commerce"
       },
       "servicios": {
-        "title": "Web Development Services | Your Name",
+        "title": "Web Development Services | Marcos Espinoza",
         "description": "Explore my services: custom web development, e-commerce solutions, and optimization to boost your website's performance.",
         "keywords": "web services, custom development, e-commerce, SEO, WPO, web optimization"
       },
       "portfolio": {
-        "title": "Project Portfolio | Your Name",
+        "title": "Project Portfolio | Marcos Espinoza",
         "description": "Browse my portfolio of web development projects. Case studies of websites, online stores, and custom solutions.",
         "keywords": "web portfolio, projects, website development, e-commerce examples, UX/UI"
       },
@@ -138,12 +138,12 @@
       "nav_portfolio": "Portfolio",
       "nav_sobre_mi": "About Me",
       "nav_contacto": "Contact",
-      "footer_titulo": "Your Name",
+      "footer_titulo": "Marcos Espinoza",
       "footer_parrafo": "Professional web development and design to help you grow.",
       "footer_enlaces_rapidos": "Quick Links",
       "footer_sigueme": "Follow Me",
-      "footer_copyright": "© 2025 Your Name. All rights reserved.",
-      "hero_titulo": "Hi, I'm Your Name. Web Developer.",
+      "footer_copyright": "© 2025 Marcos Espinoza. All rights reserved.",
+      "hero_titulo": "Hi, I'm Marcos Espinoza. Web Developer.",
       "hero_subtitulo": "I transform ideas into digital experiences that work. I help you create a website that reflects your brand and connects with your customers.",
       "btn_ver_portfolio": "View Portfolio",
       "btn_contactar": "Contact",
@@ -184,7 +184,7 @@
       "plan_ecommerce_caract_3": "Secure payment gateway",
       "plan_ecommerce_caract_4": "Shopping cart functionality",
       "btn_contacto_plan_ecommerce": "Contact",
-      "sobre_mi_titulo_principal": "Hi, I'm Your Name.",
+      "sobre_mi_titulo_principal": "Hi, I'm Marcos Espinoza.",
       "sobre_mi_subtitulo": "Web Designer and Developer with a passion for creating incredible digital experiences.",
       "sobre_mi_historia_titulo": "My Story and Philosophy",
       "sobre_mi_historia_parrafo_1": "I started my career in the digital world with an insatiable curiosity about how websites work. What began as a hobby turned into a passion and, ultimately, my profession.",
@@ -199,7 +199,7 @@
       "contacto_titulo_principal": "Let's Talk About Your Project",
       "contacto_subtitulo": "I'm ready to help you create a digital presence that stands out. Fill out the form and I'll get back to you as soon as possible.",
       "form_titulo": "Send a Message",
-      "form_nombre": "Your Name",
+      "form_nombre": "Marcos Espinoza",
       "form_email": "Your Email",
       "form_mensaje": "Your Message",
       "btn_enviar": "Send Message",

@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cargando...</title>
+    <title>Marcos Espinoza - Inicio</title>
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta name="author" content="">
@@ -23,10 +24,12 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Nunito+Sans:opsz,wght@6..12,400;6..12,700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Nunito+Sans:opsz,wght@6..12,400;6..12,700&display=swap"
+        rel="stylesheet">
     <link href="assets/css/base.css" rel="stylesheet">
     <link href="assets/css/components.css" rel="stylesheet">
     <link href="assets/css/pages/home.css" rel="stylesheet">
@@ -36,24 +39,32 @@
     <script src="assets/js/theme.js" defer></script>
     <script src="assets/js/pages/home.js" defer></script>
 </head>
+
 <body data-page-id="index">
 
     <header>
+        <!-- NavBar -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-sm py-3">
             <div class="container">
                 <a class="navbar-brand" href="index.html">
-                    <img src="assets/images/logos/logo-1.webp" alt="Logo de Tu Nombre" width="40" height="40" class="d-inline-block align-text-middle me-2">
-                    <span class="fw-bold">Tu Nombre</span>
+                    <img src="assets/images/logos/logo-1.webp" alt="Logo de Marcos Espinoza" width="40" height="40"
+                        class="d-inline-block align-text-middle me-2">
+                    <span class="fw-bold">Marcos Espinoza</span>
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="servicios.html" data-i18n="nav_servicios">Servicios</a></li>
-                        <li class="nav-item"><a class="nav-link" href="portfolio.html" data-i18n="nav_portfolio">Portafolio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="sobre-mi.html" data-i18n="nav_sobre_mi">Sobre Mí</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contacto.html" data-i18n="nav_contacto">Contacto</a></li>
+                        <li class="nav-item"><a class="nav-link" href="servicios.html"
+                                data-i18n="nav_servicios">Servicios</a></li>
+                        <li class="nav-item"><a class="nav-link" href="portfolio.html"
+                                data-i18n="nav_portfolio">Portafolio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="sobre-mi.html" data-i18n="nav_sobre_mi">Sobre
+                                Mí</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contacto.html"
+                                data-i18n="nav_contacto">Contacto</a></li>
                     </ul>
                     <div class="lang-switcher ms-3 d-flex align-items-center">
                         <button class="btn btn-sm btn-outline-secondary me-2" data-lang="es">ES</button>
@@ -67,97 +78,187 @@
                 </div>
             </div>
         </nav>
+        <!-- // end NavBar // -->
     </header>
 
     <main>
+        <!-- Hero -->
         <section id="hero" class="hero-section text-center py-5">
             <div class="container">
-                <h1 class="display-3 fw-bold" data-i18n="hero_titulo">Hola, soy Tu Nombre. Desarrollador Web.</h1>
-                <p class="lead mt-3" data-i18n="hero_subtitulo">Transformo ideas en experiencias digitales que funcionan. Te ayudo a crear un sitio web que refleje tu marca y conecte con tus clientes.</p>
-                <a href="portfolio.html" class="btn btn-primary btn-lg mt-4" data-i18n="btn_ver_portfolio">Ver Portafolio</a>
-                <a href="contacto.html" class="btn btn-outline-primary btn-lg mt-4 ms-3" data-i18n="btn_contactar">Contactar</a>
+                <h1 class="display-3 fw-bold" data-i18n="hero_titulo">Hola, soy Marcos Espinoza. Desarrollador Web.</h1>
+                <div class="d-flex justify-content-center">
+                    <p class="lead mt-3" data-i18n="hero_subtitulo">Transformo ideas en experiencias digitales que
+                        funcionan. Te ayudo a crear un sitio web que refleje tu marca y conecte con tus clientes.</p>
+                </div>
+                <a href="portfolio.html" class="btn btn-primary btn-lg mt-4" data-i18n="btn_ver_portfolio">Ver
+                    Portafolio</a>
+                <a href="contacto.html" class="btn btn-outline-primary btn-lg mt-4 ms-3"
+                    data-i18n="btn_contactar">Contactar</a>
             </div>
         </section>
+        <!-- // end hero // -->
 
+        <!-- Servicios -->
         <section id="servicios" class="services-home-section py-5">
             <div class="container">
-                <h2 class="display-5 fw-bold text-center mb-5" data-i18n="section_servicios_titulo">Servicios que te ayudarán a crecer</h2>
+                <h2 class="display-5 fw-bold text-center mb-5" data-i18n="section_servicios_titulo">Servicios que te
+                    ayudarán a crecer</h2>
                 <div class="row text-center">
                     <div class="col-md-4 mb-4">
                         <i class="bi bi-code-slash display-4 text-primary mb-3"></i>
                         <h3 class="h4 fw-bold" data-i18n="service_dev_title">Desarrollo Web a Medida</h3>
-                        <p class="text-muted" data-i18n="service_dev_desc">Creación de sitios web únicos, rápidos y seguros, optimizados para una experiencia de usuario excepcional.</p>
+                        <p class="text-muted" data-i18n="service_dev_desc">Creación de sitios web únicos, rápidos y
+                            seguros, optimizados para una experiencia de usuario excepcional.</p>
                     </div>
                     <div class="col-md-4 mb-4">
                         <i class="bi bi-cart4 display-4 text-primary mb-3"></i>
                         <h3 class="h4 fw-bold" data-i18n="service_ecommerce_title">E-commerce</h3>
-                        <p class="text-muted" data-i18n="service_ecommerce_desc">Desarrollo de tiendas online robustas y fáciles de gestionar que convierten visitantes en clientes.</p>
+                        <p class="text-muted" data-i18n="service_ecommerce_desc">Desarrollo de tiendas online robustas y
+                            fáciles de gestionar que convierten visitantes en clientes.</p>
                     </div>
                     <div class="col-md-4 mb-4">
                         <i class="bi bi-search display-4 text-primary mb-3"></i>
                         <h3 class="h4 fw-bold" data-i18n="service_seo_title">Optimización SEO</h3>
-                        <p class="text-muted" data-i18n="service_seo_desc">Mejoro la visibilidad de tu sitio web para que los clientes potenciales te encuentren en Google y otros buscadores.</p>
+                        <p class="text-muted" data-i18n="service_seo_desc">Mejoro la visibilidad de tu sitio web para
+                            que los clientes potenciales te encuentren en Google y otros buscadores.</p>
                     </div>
                 </div>
             </div>
         </section>
-        
+        <!-- // end servicios // -->
+
+        <!-- Sobre mi -->
+        <section id="sobre-mi" class="about-summary-section py-5" aria-labelledby="sobre-mi-title">
+            <div class="container">
+                <div class="row align-items-center g-4 g-lg-5">
+                    <!-- Columna izquierda: título, reseña, botón -->
+                    <div class="col-12 col-md-6">
+                        <h2 id="sobre-mi-title" class="display-4 fw-bold mb-3" data-i18n="sobre_mi_titulo_principal">
+                            Hola, soy <span class="text-primary">Marcos Espinoza</span>.
+                        </h2>
+
+                        <p class="lead text-muted mb-4" data-i18n="sobre_mi_subtitulo">
+                            Diseñador y Desarrollador Web con pasión por crear experiencias digitales increíbles.
+                        </p>
+
+                        <a class="btn btn-primary btn-lg" href="/sobre-mi.html" data-i18n="sobre_mi_boton_conocer_mas"
+                            aria-label="Ir a la página Sobre mí">
+                            Conocer más sobre mí
+                        </a>
+                    </div>
+
+                    <!-- Columna derecha: imagen -->
+                    <div class="col-12 col-md-6 text-center">
+                        <picture>
+                            <source srcset="assets/images/foto-perfil.webp" type="image/webp">
+                            <img src="assets/images/foto-perfil.jpg" alt="Foto de Marcos Espinoza"
+                                class="img-fluid rounded-3 shadow" width="560" height="560" decoding="async"
+                                fetchpriority="high">
+                        </picture>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- // end sobre mi // -->
+
+        <!-- Portfolio -->
         <section id="portfolio" class="featured-portfolio-section bg-light py-5">
             <div class="container">
-                <h2 class="display-5 fw-bold text-center mb-5" data-i18n="section_portfolio_titulo">Mis últimos proyectos</h2>
+                <h2 class="display-5 fw-bold text-center mb-5" data-i18n="section_portfolio_titulo">Mis
+                    últimos proyectos</h2>
                 <div id="home-projects-list" class="row">
-                    </div>
+                </div>
             </div>
         </section>
+        <!-- // end portfolio // -->
 
+        <!-- Colaboradores -->
         <section id="colaboradores" class="collaborators-section py-5">
             <div class="container">
-                <h2 class="display-5 fw-bold text-center mb-5" data-i18n="section_colaboradores_titulo">Con la confianza de las mejores marcas</h2>
+                <h2 class="display-5 fw-bold text-center mb-5" data-i18n="section_colaboradores_titulo">
+                    Con la confianza de las mejores marcas</h2>
                 <div id="collaborators-list" class="row justify-content-center align-items-center g-4">
-                    </div>
+                </div>
             </div>
         </section>
+        <!-- // end colaboradores // -->
 
+        <!-- CTA Contacto -->
+        <section class="cta-section text-center py-5 bg-dark text-white">
+            <div class="container">
+                <h2 class="display-5 fw-bold" data-i18n="cta_titulo">¿Listo para empezar tu proyecto?</h2>
+                <p class="lead mt-3" data-i18n="cta_parrafo">Transforma tu idea en realidad con una solución web
+                    profesional.</p>
+                <a href="contacto.html" class="btn btn-primary btn-lg mt-4" data-i18n="btn_contactar_cta">Contactar para
+                    un presupuesto</a>
+            </div>
+        </section>
+        <!-- // end CTA Contacto // -->
     </main>
 
     <footer class="bg-dark text-white pt-5 pb-4">
+        <!-- Footer -->
         <div class="container">
+            <!-- Footer -->
             <div class="row">
                 <div class="col-md-4 mb-4">
                     <div class="d-flex align-items-center mb-3">
-                        <img src="assets/images/logos/logo-1.webp" alt="Logo de Tu Nombre" width="40" height="40" class="me-2">
-                        <span class="fs-4 fw-bold" data-i18n="footer_titulo">Tu Nombre</span>
+                        <img src="assets/images/logos/logo-1.webp" alt="Logo de Marcos Espinoza" width="40" height="40"
+                            class="me-2">
+                        <span class="fs-4 fw-bold" data-i18n="footer_titulo">Marcos Espinoza</span>
                     </div>
-                    <p class="text-muted" data-i18n="footer_parrafo">Desarrollo y diseño web profesional para ayudarte a crecer.</p>
+                    <p class="text-muted" data-i18n="footer_parrafo">Desarrollo y diseño web profesional para ayudarte a
+                        crecer.</p>
                 </div>
                 <div class="col-md-4 mb-4">
                     <h5 class="fw-bold mb-3" data-i18n="footer_enlaces_rapidos">Enlaces Rápidos</h5>
                     <ul class="list-unstyled">
-                        <li class="mb-2"><a href="servicios.html" class="text-decoration-none text-muted" data-i18n="nav_servicios">Servicios</a></li>
-                        <li class="mb-2"><a href="portfolio.html" class="text-decoration-none text-muted" data-i18n="nav_portfolio">Portafolio</a></li>
-                        <li class="mb-2"><a href="sobre-mi.html" class="text-decoration-none text-muted" data-i18n="nav_sobre_mi">Sobre Mí</a></li>
-                        <li class="mb-2"><a href="contacto.html" class="text-decoration-none text-muted" data-i18n="nav_contacto">Contacto</a></li>
+                        <li class="mb-2"><a href="servicios.html" class="text-decoration-none text-muted"
+                                data-i18n="nav_servicios">Servicios</a></li>
+                        <li class="mb-2"><a href="portfolio.html" class="text-decoration-none text-muted"
+                                data-i18n="nav_portfolio">Portafolio</a></li>
+                        <li class="mb-2"><a href="sobre-mi.html" class="text-decoration-none text-muted"
+                                data-i18n="nav_sobre_mi">Sobre Mí</a></li>
+                        <li class="mb-2"><a href="contacto.html" class="text-decoration-none text-muted"
+                                data-i18n="nav_contacto">Contacto</a></li>
                     </ul>
                 </div>
                 <div class="col-md-4 mb-4">
                     <h5 class="fw-bold mb-3" data-i18n="footer_sigueme">Sígueme</h5>
-                    <a href="#" class="text-decoration-none me-3" aria-label="LinkedIn"><i class="bi bi-linkedin fs-4 text-white"></i></a>
-                    <a href="#" class="text-decoration-none me-3" aria-label="GitHub"><i class="bi bi-github fs-4 text-white"></i></a>
-                    <a href="#" class="text-decoration-none me-3" aria-label="Instagram"><i class="bi bi-instagram fs-4 text-white"></i></a>
-                    <a href="#" class="text-decoration-none me-3" aria-label="Twitter"><i class="bi bi-twitter-x fs-4 text-white"></i></a>
+                    <a href="#" class="text-decoration-none me-3" aria-label="LinkedIn"><i
+                            class="bi bi-linkedin fs-4 text-white"></i></a>
+                    <a href="#" class="text-decoration-none me-3" aria-label="GitHub"><i
+                            class="bi bi-github fs-4 text-white"></i></a>
+                    <a href="#" class="text-decoration-none me-3" aria-label="Instagram"><i
+                            class="bi bi-instagram fs-4 text-white"></i></a>
+                    <a href="#" class="text-decoration-none me-3" aria-label="Twitter"><i
+                            class="bi bi-twitter-x fs-4 text-white"></i></a>
                 </div>
             </div>
+            <!-- // end // -->
+
+            <!-- Copyright -->
             <hr class="border-secondary mt-2 mb-3">
-            <div class="text-center">
-                <p class="mb-0 text-muted" data-i18n="footer_copyright">© 2025 Tu Nombre. Todos los derechos reservados.</p>
-                <a href="legal/politica-privacidad.html" class="text-muted me-3">Política de Privacidad</a>
-                <a href="legal/terminos-condiciones.html" class="text-muted me-3">Términos y Condiciones</a>
-                <a href="legal/cookies.html" class="text-muted">Política de Cookies</a>
+            <div>
+                <div class="row align-content-center align-items-center justify-content-around">
+                    <div class="col-md-6 md-6">
+                        <p class="mb-0 text-muted" data-i18n="footer_copyright">© 2025 Marcos Espinoza. Todos los
+                            derechos reservados.</p>
+                    </div>
+                    <div class="col-md-6 md-6 d-flex justify-content-end">
+                        <a href="legal/politica-privacidad.html" class="text-muted me-3">Política de Privacidad</a>
+                        <a href="legal/terminos-condiciones.html" class="text-muted me-3">Términos y Condiciones</a>
+                        <a href="legal/cookies.html" class="text-muted">Política de Cookies</a>
+                    </div>
+                </div>
             </div>
+            <!-- // end copyright // -->
         </div>
+        <!-- // end footer // -->
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
 </body>
+
 </html>
