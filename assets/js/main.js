@@ -18,4 +18,82 @@ document.addEventListener('DOMContentLoaded', function() {
     // - Animaciones al hacer scroll.
     // - Lógica para un modal global.
     // - Funcionalidad para un botón de "volver arriba".
+
+    (function () {
+  const SRC = '/assets/data/projects.json'; // <-- ajusta la ruta si es necesario
+
+  // Obtiene una imagen desde el objeto del proyecto, sea string o { webp, jpg, src, alt }
+  function pickImage(item) {
+    if (!item) return { src: '', alt: 'Proyecto' };
+    if (typeof item.image === 'string') {
+      return { src: item.image, alt: item.image_alt || item.title || item.name || 'Proyecto' };
+    }
+    if (item.image && typeof item.image === 'object') {
+      return {
+        src: item.image.webp || item.image.jpg || item.image.src || '',
+        alt: item.image.alt || item.image_alt || item.title || item.name || 'Proyecto'
+      };
+    }
+    if (Array.isArray(item.images) && item.images.length) {
+      const first = item.images[0];
+      if (typeof first === 'string') return { src: first, alt: item.title || item.name || 'Proyecto' };
+      if (typeof first === 'object') {
+        return { src: first.webp || first.jpg || first.src || '', alt: first.alt || 'Proyecto' };
+      }
+    }
+    return { src: '', alt: item.title || item.name || 'Proyecto' };
+  }
+
+  function cardHTML(item) {
+    const title   = item.title || item.name || '';
+    const excerpt = item.excerpt || item.description || item.summary || '';
+    const url     = item.url || item.link || (item.slug ? `/proyectos/${item.slug}.html` : '#');
+    const img     = pickImage(item);
+
+    return `
+      <article class="card h-100 shadow-sm">
+        ${img.src ? `<img src="${img.src}" class="card-img-top" alt="${img.alt}" loading="lazy">` : ``}
+        <div class="card-body">
+          ${title ? `<h3 class="h5 card-title mb-2">${title}</h3>` : ``}
+          ${excerpt ? `<p class="card-text text-muted mb-3">${excerpt}</p>` : ``}
+          ${url ? `<a href="${url}" class="btn btn-outline-primary btn-sm">Ver proyecto</a>` : ``}
+        </div>
+      </article>
+    `;
+  }
+
+  async function loadProjects(selector, { src = SRC, limit = null } = {}) {
+    const grid = document.querySelector(selector);
+    if (!grid) return;
+
+    try {
+      const res = await fetch(src, { cache: 'no-store' });
+      const data = await res.json();
+      const items = Array.isArray(data) ? data : (data.projects || data.items || []);
+      if (!Array.isArray(items)) return;
+
+      (limit ? items.slice(0, limit) : items).forEach(item => {
+        const col = document.createElement('div');
+        col.className = 'col';
+        col.innerHTML = cardHTML(item);
+        grid.appendChild(col);
+      });
+    } catch (err) {
+      console.error('Error cargando projects.json:', err);
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    // Home: primeros 4
+    if (document.getElementById('home-projects-list')) {
+      loadProjects('#home-projects-list', { limit: 4 });
+    }
+    // Portfolio: todos
+    if (document.getElementById('portfolio-projects-list')) {
+      loadProjects('#portfolio-projects-list');
+    }
+  });
+})();
+
 });
+
