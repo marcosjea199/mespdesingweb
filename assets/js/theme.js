@@ -17,18 +17,23 @@ document.addEventListener('DOMContentLoaded', () => {
     // Establecer el tema al cargar la página
     if (storedTheme) {
         applyTheme(storedTheme);
-    } else if (userPrefersDark.matches) {
-        applyTheme('dark');
     } else {
-        applyTheme('light');
+        applyTheme(userPrefersDark.matches ? 'dark' : 'light');
     }
+
+    // Actualizar si la preferencia del sistema cambia y no hay tema guardado
+    userPrefersDark.addEventListener('change', (e) => {
+        if (!localStorage.getItem('theme')) {
+            applyTheme(e.matches ? 'dark' : 'light');
+        }
+    });
 
     // Escuchar el evento de clic en el botón
     if (toggleBtn) {
         toggleBtn.addEventListener('click', () => {
             let currentTheme = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
             let newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            
+
             localStorage.setItem('theme', newTheme);
             applyTheme(newTheme);
         });

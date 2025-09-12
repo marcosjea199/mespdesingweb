@@ -56,6 +56,17 @@ body.dark-mode {
     --border-color: #495057;
 }
 
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color: #212529;
+        --card-background-color: #2c3138;
+        --text-color: #f8f9fa;
+        --muted-text-color: #adb5bd;
+        --heading-color: #f8f9fa;
+        --border-color: #495057;
+    }
+}
+
 body {
     background-color: var(--background-color);
     color: var(--text-color);
