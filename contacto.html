@@ -81,7 +81,7 @@
                 <div class="row">
                     <div class="col-lg-6 mb-4">
                         <h3 class="h4 fw-bold mb-3" data-i18n="form_titulo">Envía un Mensaje</h3>
-                        <form action="mailto:tu-email@ejemplo.com" method="post" enctype="text/plain">
+                        <form id="contact-form" class="needs-validation" novalidate method="post">
                             <div class="mb-3">
                                 <label for="nombre" class="form-label" data-i18n="form_nombre">Tu Nombre</label>
                                 <input type="text" class="form-control" id="nombre" name="nombre" required>
@@ -95,10 +95,8 @@
                                 <textarea class="form-control" id="mensaje" name="mensaje" rows="4" required></textarea>
                             </div>
                             <button type="submit" class="btn btn-primary btn-lg fw-bold w-100" data-i18n="btn_enviar">Enviar Mensaje</button>
+                            <div id="form-alert" class="alert d-none mt-3" role="alert"></div>
                         </form>
-                        <div class="text-center mt-4">
-                            <p class="text-muted" data-i18n="aviso_mailto">Al hacer clic en "Enviar", se abrirá tu aplicación de correo para completar el envío.</p>
-                        </div>
                     </div>
 
                     <div class="col-lg-6">
@@ -179,5 +177,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/pages/contacto.js"></script>
 </body>
 </html>
