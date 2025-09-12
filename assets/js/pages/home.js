@@ -1,32 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
 
     // --- Carga dinámica de Proyectos en la página de inicio ---
-    const projectListContainer = document.getElementById('home-projects-list');
-
-    fetch('assets/data/portfolio/projects.json')
-        .then(response => response.json())
-        .then(data => {
-            // Mostrar solo los 3 primeros proyectos para la página de inicio
-            const projectsToShow = data.proyectos.slice(0, 3); 
-            projectsToShow.forEach(project => {
-                const projectCardHTML = `
-                    <div class="col-lg-4 mb-4">
-                        <a href="portfolio/${project.id}.html" class="text-decoration-none">
-                            <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden home-project-card">
-                                <img src="${project.imagen_min}" class="card-img-top" alt="Captura de pantalla del ${project.titulo}">
-                                <div class="card-body text-center">
-                                    <h3 class="card-title fw-bold fs-5">${project.titulo}</h3>
-                                    <p class="card-text text-muted">${project.descripcion}</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                `;
-                projectListContainer.insertAdjacentHTML('beforeend', projectCardHTML);
-            });
-        })
-        .catch(error => console.error('Error al cargar proyectos:', error));
-
+    if (window.loadProjects) {
+        loadProjects('#home-projects-list', { limit: 3 });
+    }
 
     // --- Carga dinámica de Colaboradores ---
     const collaboratorsList = document.getElementById('collaborators-list');
