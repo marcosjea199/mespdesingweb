@@ -2,8 +2,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const pageId = document.body.dataset.pageId;
 
     Promise.all([
-        fetch('/assets/seo/site.json').then(res => res.json()),
-        fetch(`/assets/seo/${pageId}.json`).then(res => res.json()).catch(() => ({}))
+        fetch('assets/seo/site.json').then(res => res.json()),
+        fetch(`assets/seo/${pageId}.json`).then(res => res.json()).catch(() => ({}))
     ])
     .then(([siteData, pageData]) => {
         // Combinar datos globales y de la página
