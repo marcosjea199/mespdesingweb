@@ -1,15 +1,32 @@
 :root {
-  --brand-primary:#1D3D91; --brand-dark:#1F264A; --neutral-10:#060911; --neutral-40:#91A5B4; --neutral-60:#F2F6FC;
+  --brand-primary:#1D3D91;
+  --brand-dark:#1F264A;
+  --neutral-10:#060911;
+  --neutral-40:#91A5B4;
+  --neutral-60:#F2F6FC;
   --radius:1rem;
+
   /* Definimos variables CSS para las fuentes */
   --font-heading: 'Montserrat', sans-serif;
   --font-body: 'Nunito Sans', sans-serif;
+
+  --primary-color: #6c63ff;
+  --primary-color-dark: #564ad6;
+  --primary-color-rgb: 108, 99, 255;
+
+  /* Colores del modo claro */
+  --background-color: #f8f9fa;
+  --card-background-color: #ffffff;
+  --text-color: #212529;
+  --muted-text-color: #6c757d;
+  --heading-color: #212529;
+  --border-color: #dee2e6;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   font-weight: 900;
-  
+  color: var(--heading-color);
 }
 
 /* Estilos adicionales para la barra de navegación */
@@ -30,20 +47,6 @@ footer .bi {
 
 footer .bi:hover {
   color: #007bff !important;
-}
-
-:root {
-    --primary-color: #6c63ff;
-    --primary-color-dark: #564ad6;
-    --primary-color-rgb: 108, 99, 255;
-
-    /* Colores del modo claro */
-    --background-color: #f8f9fa;
-    --card-background-color: #ffffff;
-    --text-color: #212529;
-    --muted-text-color: #6c757d;
-    --heading-color: #212529;
-    --border-color: #dee2e6;
 }
 
 /* Modo oscuro */
@@ -76,10 +79,6 @@ body {
 /* Actualizar componentes para usar las variables */
 .navbar, .footer {
     background-color: var(--background-color) !important;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    color: var(--heading-color);
 }
 
 .card {
