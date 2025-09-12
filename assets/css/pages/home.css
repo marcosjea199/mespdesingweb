@@ -1,5 +1,5 @@
 /* --- Sección de Héroe --- */
-.hero-section {
+#hero {
     position: relative;
     overflow: hidden;
     padding-top: 0;
@@ -51,14 +51,14 @@
     z-index: 1;
 }
 
-.hero-section h1 {
+#hero h1 {
     font-size: 3.5rem;
     font-weight: 900;
     color: #fff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
-.hero-section .lead {
+#hero .lead {
     font-size: 1.5rem;
     max-width: 600px;
     color: #fff;
@@ -66,7 +66,7 @@
 }
 
 @media (min-width: 992px) {
-    .hero-section h1 {
+    #hero h1 {
         font-size: 4.5rem;
     }
 }
