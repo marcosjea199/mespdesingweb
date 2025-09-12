@@ -33,17 +33,6 @@
     font-weight: 600;
 }
 
-/* --- CTA Final (Mismos estilos que en index.css) --- */
-.contact-cta-section {
-    background-color: var(--primary-bg);
-    color: var(--white);
-    padding: 6rem 0;
-}
-
-.contact-cta-section h2 {
-    font-family: var(--font-heading);
-    font-weight: 900;
-}
 
 /* --- Sección de Planes y Precios --- */
 .planes-section {
