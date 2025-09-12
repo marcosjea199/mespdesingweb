@@ -33,8 +33,3 @@
 .project-gallery-section .hover-grow:hover {
     transform: scale(1.02);
 }
-
-/* CTA Final */
-.contact-cta-section {
-    background-color: #0d6efd;
-}

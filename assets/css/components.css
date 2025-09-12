@@ -56,3 +56,15 @@
     font-weight: bold;
     letter-spacing: 0.5px;
 }
+
+/* --- Reutilizable: Sección CTA de Contacto --- */
+.contact-cta-section {
+    background-color: #0d6efd;
+    color: #fff;
+    padding: 6rem 0;
+}
+
+.contact-cta-section h2 {
+    font-family: var(--font-heading);
+    font-weight: 900;
+}
