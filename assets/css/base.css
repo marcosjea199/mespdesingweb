@@ -21,7 +21,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Estilos adicionales para el pie de página */
 footer a.text-muted:hover {
-  color: #fff !important;
+  color: var(--white) !important;
 }
 
 footer .bi {
@@ -29,13 +29,18 @@ footer .bi {
 }
 
 footer .bi:hover {
-  color: #007bff !important;
+  color: var(--link-color) !important;
 }
 
 :root {
     --primary-color: #6c63ff;
     --primary-color-dark: #564ad6;
     --primary-color-rgb: 108, 99, 255;
+
+    --light-bg: #f8f9fa;
+    --primary-bg: #0d6efd;
+    --white: #ffffff;
+    --link-color: #007bff;
 
     /* Colores del modo claro */
     --background-color: #f8f9fa;

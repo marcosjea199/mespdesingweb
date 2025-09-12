@@ -12,7 +12,7 @@
 /* --- Detalle de los Servicios --- */
 .servicios-detalle .service-block {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    background-color: #f8f9fa; /* Color de fondo sutil para cada bloque */
+    background-color: var(--light-bg); /* Color de fondo sutil para cada bloque */
 }
 
 .servicios-detalle .service-block:hover {
@@ -35,8 +35,8 @@
 
 /* --- CTA Final (Mismos estilos que en index.css) --- */
 .contact-cta-section {
-    background-color: #0d6efd;
-    color: #fff;
+    background-color: var(--primary-bg);
+    color: var(--white);
     padding: 6rem 0;
 }
 
@@ -47,7 +47,7 @@
 
 /* --- Sección de Planes y Precios --- */
 .planes-section {
-    background-color: #f8f9fa; /* Fondo sutil para la sección */
+    background-color: var(--light-bg); /* Fondo sutil para la sección */
 }
 
 .planes-section h2 {

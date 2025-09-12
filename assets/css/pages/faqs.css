@@ -3,18 +3,18 @@
 .faqs-hero {
     padding-top: 6rem;
     padding-bottom: 3rem;
-    background-color: #f8f9fa; /* Fondo gris claro */
+    background-color: var(--light-bg); /* Fondo gris claro */
 }
 
 .faqs-hero h1 {
     font-size: 3rem;
     font-weight: 700;
-    color: #212529;
+    color: var(--text-color);
 }
 
 .faqs-hero .lead {
     font-size: 1.25rem;
-    color: #6c757d;
+    color: var(--muted-text-color);
 }
 
 .faqs-content {
@@ -23,9 +23,9 @@
 }
 
 .accordion-button:not(.collapsed) {
-    color: #007bff; /* Color del texto cuando el acordeón está abierto */
+    color: var(--link-color); /* Color del texto cuando el acordeón está abierto */
     background-color: #e9f5ff; /* Color de fondo cuando el acordeón está abierto */
-    border-color: #007bff;
+    border-color: var(--link-color);
 }
 
 .accordion-button:focus {

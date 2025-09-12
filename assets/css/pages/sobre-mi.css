@@ -32,8 +32,8 @@
 
 /* --- CTA Final (Mismos estilos que en index.css) --- */
 .contact-cta-section {
-    background-color: #0d6efd;
-    color: #fff;
+    background-color: var(--primary-bg);
+    color: var(--white);
     padding: 6rem 0;
 }
 

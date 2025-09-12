@@ -39,7 +39,7 @@
 .portfolio-gallery .btn-outline-primary.active,
 .portfolio-gallery .btn-outline-primary:hover {
     background-color: var(--bs-primary);
-    color: #fff;
+    color: var(--white);
 }
 
 /* Estilos para las tarjetas de proyecto filtradas (ocultas por JS) */

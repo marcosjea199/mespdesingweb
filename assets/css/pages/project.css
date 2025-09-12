@@ -2,7 +2,7 @@
 
 /* Sección de Héroe */
 .project-hero {
-    background-color: #f8f9fa;
+    background-color: var(--light-bg);
     padding: 8rem 0 3rem 0;
 }
 
@@ -23,7 +23,7 @@
 
 /* Galería de Imágenes */
 .project-gallery-section {
-    background-color: #f8f9fa;
+    background-color: var(--light-bg);
 }
 
 .project-gallery-section .hover-grow {
@@ -36,5 +36,5 @@
 
 /* CTA Final */
 .contact-cta-section {
-    background-color: #0d6efd;
+    background-color: var(--primary-bg);
 }
