@@ -1,0 +1,12 @@
+{
+    "id": "faqs",
+    "title": "Preguntas Frecuentes (FAQs) | Marcos Espinoza",
+    "description": "Resuelve las dudas más comunes sobre mis servicios de diseño y desarrollo web. Encuentra respuestas rápidas sobre procesos, precios y soporte.",
+    "keywords": "preguntas frecuentes, faqs, dudas, marcos espinoza, desarrollo web, diseño web, soporte",
+    "og_title": "Preguntas Frecuentes sobre Diseño y Desarrollo Web",
+    "og_description": "Encuentra respuestas a las dudas más comunes sobre mis servicios y la forma en que trabajo.",
+    "og_image": "assets/images/og-default.jpg",
+    "twitter_card": "summary_large_image",
+    "twitter_site": "@mespdesingweb",
+    "twitter_creator": "@mespdesingweb"
+}
