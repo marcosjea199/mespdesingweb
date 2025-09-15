@@ -1,19 +1,45 @@
 (function () {
-  'use strict'
+  'use strict';
 
-  // Selecciona el formulario que necesita validación
-  const form = document.querySelector('.needs-validation')
+  const form = document.getElementById('contact-form');
+  if (!form) return;
 
-  // Añade un 'event listener' para cuando el formulario intente ser enviado
-  form.addEventListener('submit', function (event) {
-    // Si el formulario no es válido, evita que se envíe
+  const alertBox = document.getElementById('form-alert');
+  const endpoint = 'https://formspree.io/f/maygbkvd'; // Reemplaza con tu endpoint
+
+  form.addEventListener('submit', async function (event) {
+    event.preventDefault();
+    event.stopPropagation();
+
+    alertBox.classList.add('d-none');
+
     if (!form.checkValidity()) {
-      event.preventDefault()
-      event.stopPropagation()
+      form.classList.add('was-validated');
+      return;
     }
 
-    // Agrega la clase de validación de Bootstrap al formulario
-    // Esto mostrará los mensajes de error/éxito
-    form.classList.add('was-validated')
-  }, false)
-})()
+    form.classList.add('was-validated');
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: formData
+      });
+
+      if (response.ok) {
+        alertBox.textContent = 'Mensaje enviado con éxito.';
+        alertBox.className = 'alert alert-success mt-3';
+        form.reset();
+        form.classList.remove('was-validated');
+      } else {
+        throw new Error('Error en la respuesta');
+      }
+    } catch (err) {
+      alertBox.textContent = 'Ocurrió un error al enviar el mensaje. Inténtalo de nuevo más tarde.';
+      alertBox.className = 'alert alert-danger mt-3';
+    }
+  });
+})();
+

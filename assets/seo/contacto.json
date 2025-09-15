@@ -1,0 +1,12 @@
+{
+    "id": "contacto",
+    "title": "Contacto | Consigue un Presupuesto para tu Proyecto Web",
+    "description": "Ponte en contacto para solicitar un presupuesto, hacer una consulta o simplemente saludar. Estoy listo para ayudarte a llevar tu proyecto al siguiente nivel.",
+    "keywords": "contacto, presupuesto, desarrollador web, diseñador web, consulta, email, teléfono",
+    "og_title": "Contáctame para tu próximo proyecto web",
+    "og_description": "Transforma tu idea en realidad. Contacta ahora para discutir cómo podemos colaborar en tu sitio web, tienda online o proyecto digital.",
+    "og_image": "assets/images/og-contacto.jpg",
+    "twitter_card": "summary_large_image",
+    "twitter_site": "@mespdesingweb",
+    "twitter_creator": "@mespdesingweb"
+}

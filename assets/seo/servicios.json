@@ -1,0 +1,12 @@
+{
+    "id": "servicios",
+    "title": "Nuestros Servicios | Diseño y Desarrollo Web | Marcos Espinoza",
+    "description": "Ofrecemos servicios de diseño y desarrollo web a medida, soluciones de e-commerce, optimización SEO y branding digital. Transforma tu idea en una presencia online profesional.",
+    "keywords": "servicios web, diseño de páginas, desarrollo de e-commerce, creación de tiendas online, servicios de SEO, branding digital",
+    "og_title": "Descubre nuestros servicios de diseño y desarrollo web",
+    "og_description": "Desde el concepto hasta el lanzamiento, creamos sitios web que no solo lucen bien, sino que también generan resultados. Explora nuestra gama de servicios.",
+    "og_image": "assets/images/og-servicios.jpg",
+    "twitter_card": "summary_large_image",
+    "twitter_site": "@mespdesingweb",
+    "twitter_creator": "@mespdesingweb"
+}
