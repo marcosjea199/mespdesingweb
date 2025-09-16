@@ -18,16 +18,14 @@ document.addEventListener('DOMContentLoaded', function() {
     // - Animaciones al hacer scroll.
     // - Lógica para un modal global.
     // - Funcionalidad para un botón de "volver arriba".
+});
 
-    (function () {
-  const SRC = '/assets/data/portfolio/projects.json';
+(function () {
+  const SRC = '/assets/data/portfolio/projects.json'; // <-- ajusta la ruta si es necesario
 
   // Obtiene una imagen desde el objeto del proyecto, sea string o { webp, jpg, src, alt }
   function pickImage(item) {
     if (!item) return { src: '', alt: 'Proyecto' };
-    if (item.imagen_min) {
-      return { src: item.imagen_min, alt: item.imagen_alt || item.titulo || item.title || item.name || 'Proyecto' };
-    }
     if (typeof item.image === 'string') {
       return { src: item.image, alt: item.image_alt || item.title || item.name || 'Proyecto' };
     }
@@ -44,26 +42,21 @@ document.addEventListener('DOMContentLoaded', function() {
         return { src: first.webp || first.jpg || first.src || '', alt: first.alt || 'Proyecto' };
       }
     }
-    return { src: '', alt: item.title || item.name || item.titulo || 'Proyecto' };
+    return { src: '', alt: item.title || item.name || 'Proyecto' };
   }
 
   function cardHTML(item) {
-    const title   = item.title || item.name || item.titulo || item.nombre || '';
-    const excerpt = item.excerpt || item.description || item.summary || item.descripcion || '';
-    const urlSlug = item.slug || item.id || '';
-    const url     = item.url || item.link || (urlSlug ? `portfolio/${urlSlug}.html` : '#');
+    const title   = item.title || item.name || '';
+    const excerpt = item.excerpt || item.description || item.summary || '';
+    const url     = item.url || item.link || (item.slug ? `/proyectos/${item.slug}.html` : '#');
     const img     = pickImage(item);
-    const categories = (item.categoria || item.categories || [])
-      .map(cat => `<span class="badge bg-primary mb-2">${cat}</span>`)
-      .join('');
 
     return `
-      <article class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden project-card">
+      <article class="card h-100 shadow-sm">
         ${img.src ? `<img src="${img.src}" class="card-img-top" alt="${img.alt}" loading="lazy">` : ``}
-        <div class="card-body p-4 text-center">
-          ${categories}
-          ${title ? `<h3 class="card-title fw-bold fs-5">${title}</h3>` : ``}
-          ${excerpt ? `<p class="card-text text-muted">${excerpt}</p>` : ``}
+        <div class="card-body">
+          ${title ? `<h3 class="h5 card-title mb-2">${title}</h3>` : ``}
+          ${excerpt ? `<p class="card-text text-muted mb-3">${excerpt}</p>` : ``}
           ${url ? `<a href="${url}" class="btn btn-outline-primary btn-sm">Ver proyecto</a>` : ``}
         </div>
       </article>
@@ -77,13 +70,12 @@ document.addEventListener('DOMContentLoaded', function() {
     try {
       const res = await fetch(src, { cache: 'no-store' });
       const data = await res.json();
-      const items = Array.isArray(data) ? data : (data.projects || data.proyectos || data.items || []);
+      const items = Array.isArray(data) ? data : (data.projects || data.items || []);
       if (!Array.isArray(items)) return;
 
       (limit ? items.slice(0, limit) : items).forEach(item => {
         const col = document.createElement('div');
-        const categories = item.categoria || item.categories || [];
-        col.className = 'col project-item ' + categories.join(' ');
+        col.className = 'col';
         col.innerHTML = cardHTML(item);
         grid.appendChild(col);
       });
@@ -92,8 +84,16 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
-  window.loadProjects = loadProjects;
+  document.addEventListener('DOMContentLoaded', () => {
+    // Home: primeros 4
+    if (document.getElementById('home-projects-list')) {
+      loadProjects('#home-projects-list', { limit: 4 });
+    }
+    // Portfolio: todos
+    if (document.getElementById('portfolio-projects-list')) {
+      loadProjects('#portfolio-projects-list');
+    }
+  });
 })();
 
-});
 
