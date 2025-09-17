@@ -1,0 +1,40 @@
+{
+  "collaborators":  [
+  { "name": "Julia Pérez",   "role": "Fotógrafa",                 "url": "https://instagram.com/juliaperez",
+    "avatar": { "webp": "assets/images/colega-1.webp", "alt": "Retrato de Julia Pérez" } },
+
+  { "name": "Carlos Díaz",   "role": "Diseñador UI",              "url": "https://behance.net/carlosdiaz",
+    "avatar": { "webp": "assets/images/colega-2.webp", "alt": "Retrato de Carlos Díaz" } },
+
+  { "name": "Ana Romero",    "role": "Brand Strategist",          "url": "https://anabrand.example",
+    "avatar": { "svg": "assets/images/user.svg", "alt": "Retrato de Ana Romero" } },
+
+  { "name": "Marcos León",   "role": "Developer Frontend",        "url": "https://github.com/marcosleon",
+    "avatar": { "svg": "assets/images/user.svg", "alt": "Retrato de Marcos León" } },
+
+  { "name": "Lucía Ortega",  "role": "Ilustradora",               "url": "https://dribbble.com/luciaortega",
+    "avatar": { "svg": "assets/images/user.svg", "alt": "Retrato de Lucía Ortega" } },
+
+  { "name": "Sergio Vega",   "role": "Product Designer",          "url": "https://sergiovega.example",
+    "avatar": { "svg": "assets/images/user.svg", "alt": "Retrato de Sergio Vega" } },
+
+  { "name": "Noa Martín",    "role": "Fotógrafa de producto",     "url": "https://instagram.com/noamartin",
+    "avatar": { "svg": "assets/images/user.svg", "alt": "Retrato de Noa Martín" } },
+
+  { "name": "Pablo Ruiz",    "role": "Motion Designer",           "url": "https://pabloruiz.example",
+    "avatar": { "svg": "assets/images/user.svg", "alt": "Retrato de Pablo Ruiz" } },
+
+  { "name": "Elena Torres",  "role": "Copywriter",                "url": "https://elenatorres.example",
+    "avatar": { "svg": "assets/images/user.svg", "alt": "Retrato de Elena Torres" } },
+
+  { "name": "Diego Santos",  "role": "Full-Stack Dev",            "url": "https://github.com/diegosantos",
+    "avatar": { "svg": "assets/images/user.svg", "alt": "Retrato de Diego Santos" } },
+
+  { "name": "Sara Molina",   "role": "Art Director",              "url": "https://saramolina.example",
+    "avatar": { "svg": "assets/images/user.svg", "alt": "Retrato de Sara Molina" } },
+
+  { "name": "Iván Campos",   "role": "Fotógrafo editorial",       "url": "https://instagram.com/ivancampos",
+    "avatar": { "svg": "assets/images/user.svg", "alt": "Retrato de Iván Campos" } }
+]
+
+}

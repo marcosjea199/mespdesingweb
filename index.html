@@ -155,10 +155,12 @@
                             También tengo experiencia con el Diseño Editorial, Branding y Gestión en procesos de
                             Impresión.
                         </p>
-                        <a href="/sobre-mi.html" class="btn btn-primary btn-lg" data-i18n="sobre_mi_boton_conocer_mas"
-                            aria-label="Ir a la página Sobre mí">
-                            Conocer más sobre mí
-                        </a>
+                        <div class="d-grid gap-2 col-md-8 col-12 mx-md-0 mx-auto">
+                            <a href="/sobre-mi.html" class="btn btn-primary btn-lg"
+                                data-i18n="sobre_mi_boton_conocer_mas" aria-label="Ir a la página Sobre mí">
+                                Conocer más sobre mí
+                            </a>
+                        </div>
                     </div>
 
                 </div>
@@ -191,12 +193,31 @@
         <section id="colaboradores" class="collaborators-section py-5">
             <div class="container">
                 <h2 class="display-5 fw-bold text-center mb-5" data-i18n="section_colaboradores_titulo">
-                    Con la confianza de las mejores marcas</h2>
-                <div id="collaborators-list" class="row justify-content-center align-items-center g-4">
+                    Con la confianza de Amigos y Colaboradores
+                </h2>
+
+                <div id="collaboratorsCarousel" class="carousel slide pb-5" data-bs-ride="carousel" data-bs-interval="3500">
+                    <div class="carousel-inner" id="collaborators-slides" data-collaborators
+                        data-src="/assets/data/collaborators.json" data-per-slide="3">
+                        <!-- Slides generados por JS -->
+                    </div>
+
+                    <!-- Controles -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#collaboratorsCarousel"
+                        data-bs-slide="prev" aria-label="Anterior">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#collaboratorsCarousel"
+                        data-bs-slide="next" aria-label="Siguiente">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    </button>
+                    <!-- Indicadores (se generan por JS) -->
+                    <div class="carousel-indicators" id="collaborators-indicators"></div>
                 </div>
             </div>
         </section>
         <!-- // end colaboradores // -->
+
 
         <!-- CTA Contacto -->
         <section class="cta-section text-center py-5 bg-dark text-white">
