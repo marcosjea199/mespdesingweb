@@ -127,6 +127,43 @@
                 </div>
             </aside>
         </section>
+
+        <section id="project" class="py-5">
+            <div class="container">
+                <div class="mb-4">
+                    <a href="/portfolio.html" class="btn btn-outline-secondary btn-sm">← Volver al portfolio</a>
+                </div>
+
+                <div class="row align-items-start g-4">
+                    <!-- Col izquierda: texto -->
+                    <div class="col-12 col-lg-7">
+                        <h1 class="display-5 fw-bold mb-3" data-bind="title">Cargando…</h1>
+                        <p class="lead text-muted mb-4" data-bind="description"></p>
+
+                        <!-- contenido enriquecido opcional (desde JSON: content_html) -->
+                        <div class="mb-4" data-bind-html="content_html"></div>
+
+                        <!-- lista de tecnologías opcional -->
+                        <ul class="list-inline mb-4" data-bind-list="tech"></ul>
+
+                        <!-- CTAs opcionales -->
+                        <div class="d-flex gap-2 flex-wrap">
+                            <a class="btn btn-primary" data-bind-href="demo_url" target="_blank" rel="noopener">Ver
+                                demo</a>
+                            <a class="btn btn-outline-primary" data-bind-href="case_url">Leer caso</a>
+                        </div>
+                    </div>
+
+                    <!-- Col derecha: imagen/galería -->
+                    <div class="col-12 col-lg-5 text-center">
+                        <img class="img-fluid rounded-3 shadow" data-bind-src="image" data-bind-alt="image_alt" alt=""
+                            loading="lazy">
+                        <!-- galería opcional -->
+                        <div class="row row-cols-2 g-2 mt-2" data-bind-gallery="gallery"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer class="bg-dark text-white pt-5 pb-4">
@@ -183,196 +220,135 @@
     <!-- Script dinámico -->
     <script>
         (function () {
-            const JSON_SRC = '/assets/data/portfolio/projects.json'; // ajusta si es otra ruta
+            const JSON_URL_DEFAULT = '/assets/data/portfolio/projects.json';
+
+            function slugify(s = '') {
+                return String(s).toLowerCase()
+                    .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+                    .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+            }
 
             function getSlug() {
-                // 1) ?slug=mi-proyecto
-                const q = new URLSearchParams(location.search).get('slug');
-                if (q) return q;
-
-                // 2) Último segmento de la URL: /proyectos/mi-proyecto o /proyectos/mi-proyecto.html
-                const segs = location.pathname.replace(/\/+$/, '').split('/');
-                let last = segs[segs.length - 1] || '';
-                last = last.replace(/\.html?$/i, '');
-                return last || null;
+                // 1) ?slug=...  2) último segmento de la ruta (sin .html)
+                const q = new URLSearchParams(location.search);
+                if (q.get('slug')) return q.get('slug');
+                const seg = location.pathname.split('/').filter(Boolean).pop() || '';
+                return seg.replace(/\.html?$/i, '');
             }
 
-            function normalizeItems(data) {
-                if (Array.isArray(data)) return data;
-                if (Array.isArray(data.projects)) return data.projects;
-                if (data.data) {
-                    if (Array.isArray(data.data.projects)) return data.data.projects;
-                    if (Array.isArray(data.data.items)) return data.data.items;
-                }
-                return [];
+            function pick(items, slug) {
+                // Busca por item.slug; si no hay, intenta por título slugificado
+                return items.find(p => p.slug === slug)
+                    || items.find(p => slugify(p.title || p.name || '') === slug);
             }
 
-            function slugify(str) {
-                return String(str || '')
-                    .toLowerCase()
-                    .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
-                    .replace(/[^a-z0-9]+/g, '-')
-                    .replace(/(^-|-$)/g, '');
+            function setText(sel, text) {
+                const el = document.querySelector(sel);
+                if (el && text) el.textContent = text;
             }
 
-            function findProject(items, slug) {
-                // 1) match exacto por item.slug
-                let p = items.find(it => it.slug && it.slug === slug);
-                if (p) return p;
-
-                // 2) por URL conteniendo slug
-                p = items.find(it => (it.url || '').includes(slug));
-                if (p) return p;
-
-                // 3) por título "slugificado"
-                p = items.find(it => slugify(it.title || it.name) === slug);
-                return p || null;
+            function setAttr(sel, attr, val) {
+                const el = document.querySelector(sel);
+                if (el && val) el.setAttribute(attr, val);
             }
 
-            function setText(id, value, formatter) {
-                const el = document.getElementById(id);
-                if (!el) return;
-                if (formatter === 'html') {
-                    el.innerHTML = value || '';
-                } else {
-                    el.textContent = value || '';
-                }
+            function fillBindings(project) {
+                // Texto básico
+                document.querySelectorAll('[data-bind]').forEach(el => {
+                    const key = el.getAttribute('data-bind');
+                    if (key && project[key]) el.textContent = project[key];
+                });
+
+                // HTML enriquecido (si lo usas)
+                document.querySelectorAll('[data-bind-html]').forEach(el => {
+                    const key = el.getAttribute('data-bind-html');
+                    if (key && project[key]) el.innerHTML = project[key];
+                });
+
+                // Atributos: src/alt/href
+                document.querySelectorAll('[data-bind-src]').forEach(el => {
+                    const key = el.getAttribute('data-bind-src');
+                    const v = resolveImage(project[key], project);
+                    if (v) el.src = v;
+                });
+                document.querySelectorAll('[data-bind-alt]').forEach(el => {
+                    const key = el.getAttribute('data-bind-alt');
+                    const v = project[key] || project.title || 'Proyecto';
+                    if (v) el.alt = v;
+                });
+                document.querySelectorAll('[data-bind-href]').forEach(el => {
+                    const key = el.getAttribute('data-bind-href');
+                    const v = project[key];
+                    if (v) el.href = v; else el.style.display = 'none';
+                });
+
+                // Lista de tecnologías (array)
+                document.querySelectorAll('[data-bind-list]').forEach(ul => {
+                    const key = ul.getAttribute('data-bind-list');
+                    const arr = project[key];
+                    if (Array.isArray(arr) && arr.length) {
+                        ul.innerHTML = arr.map(t => `<li class="list-inline-item badge text-bg-light">${t}</li>`).join('');
+                    } else {
+                        ul.remove();
+                    }
+                });
+
+                // Galería (array de imágenes)
+                document.querySelectorAll('[data-bind-gallery]').forEach(row => {
+                    const key = row.getAttribute('data-bind-gallery');
+                    const gal = project[key];
+                    if (Array.isArray(gal) && gal.length) {
+                        row.innerHTML = gal.slice(0, 8).map(img => {
+                            const src = resolveImage(img, project);
+                            const alt = (typeof img === 'object' && img.alt) || project.title || 'Proyecto';
+                            return `<div class="col"><img src="${src}" alt="${alt}" class="img-fluid rounded-2" loading="lazy"></div>`;
+                        }).join('');
+                    } else {
+                        row.remove();
+                    }
+                });
+
+                // Meta dinámicos (mejores para UX social; para SEO ideal es generar estático)
+                const title = project.title || 'Proyecto';
+                const desc = project.description || project.excerpt || '';
+                const ogImg = resolveImage(project.og_image || project.image, project);
+                document.title = `${title} | Portfolio`;
+                setAttr('meta[name="description"]', 'content', desc);
+                setAttr('meta[property="og:title"]', 'content', title);
+                setAttr('meta[property="og:description"]', 'content', desc);
+                if (ogImg) setAttr('meta[property="og:image"]', 'content', new URL(ogImg, document.baseURI).href);
+                setAttr('link[rel="canonical"]', 'href', location.href);
             }
 
-            function setMeta(name, content) {
-                if (!content) return;
-                let el = document.querySelector(`meta[name="${name}"]`);
-                if (!el) {
-                    el = document.createElement('meta');
-                    el.setAttribute('name', name);
-                    document.head.appendChild(el);
-                }
-                el.setAttribute('content', content);
-            }
-
-            function setOG(property, content) {
-                if (!content) return;
-                let el = document.querySelector(`meta[property="${property}"]`);
-                if (!el) {
-                    el = document.createElement('meta');
-                    el.setAttribute('property', property);
-                    document.head.appendChild(el);
-                }
-                el.setAttribute('content', content);
-            }
-
-            function setCanonical(url) {
-                if (!url) return;
-                let link = document.querySelector('link[rel="canonical"]');
-                if (!link) {
-                    link = document.createElement('link');
-                    link.setAttribute('rel', 'canonical');
-                    document.head.appendChild(link);
-                }
-                link.setAttribute('href', new URL(url, document.baseURI).href);
-            }
-
-            function render(project) {
-                const title = project.title || project.name || 'Proyecto';
-                const excerpt = project.excerpt || project.description || '';
-                const longDesc = project.long_description || project.description_long || '';
-                const client = project.client || '';
-                const services = (project.services || []).join(', ');
-                const tech = (project.tech || project.technologies || []).join(', ');
-
-                // Imagen principal
-                let imgSrc = '';
-                let imgAlt = project.image_alt || title;
-                if (typeof project.image === 'string') {
-                    imgSrc = project.image;
-                } else if (project.image && typeof project.image === 'object') {
-                    imgSrc = project.image.jpg || project.image.webp || project.image.src || '';
-                    imgAlt = project.image.alt || imgAlt;
-                } else if (project.thumbnail) {
-                    imgSrc = project.thumbnail;
-                }
-
-                // Título / excerpt / meta
-                document.title = `${title} — Portfolio`;
-                setText('project-title', title);
-                setText('project-excerpt', excerpt);
-                setText('bc-current', title);
-                if (longDesc) setText('project-description', longDesc, 'html');
-
-                // Meta SEO (nota: algunos bots sociales no ejecutan JS)
-                setMeta('description', excerpt || longDesc?.slice(0, 155));
-                setOG('og:title', title);
-                setOG('og:description', excerpt || longDesc?.slice(0, 155));
-                setOG('og:image', imgSrc);
-                setCanonical(project.url || location.href);
-
-                // Imagen cover
-                const cover = document.getElementById('project-cover');
-                if (cover && imgSrc) {
-                    cover.src = imgSrc;
-                    cover.alt = imgAlt || title;
-                    cover.loading = 'eager';
-                    cover.decoding = 'async';
-                } else if (cover) {
-                    cover.classList.add('d-none');
-                }
-
-                // Metadatos (cliente / servicios / tech)
-                const cEl = document.getElementById('project-client');
-                if (client && cEl) { cEl.querySelector('span').textContent = client; cEl.classList.remove('d-none'); }
-                const sEl = document.getElementById('project-services');
-                if (services && sEl) { sEl.querySelector('span').textContent = services; sEl.classList.remove('d-none'); }
-                const tEl = document.getElementById('project-tech');
-                if (tech && tEl) { tEl.querySelector('span').textContent = tech; tEl.classList.remove('d-none'); }
-
-                // Galería
-                const gal = document.getElementById('project-gallery');
-                if (gal && Array.isArray(project.gallery) && project.gallery.length) {
-                    gal.innerHTML = '';
-                    project.gallery.forEach(src => {
-                        const col = document.createElement('div');
-                        col.className = 'col-6';
-                        col.innerHTML = `
-          <a href="${src}" target="_blank" rel="noopener">
-            <img src="${src}" class="img-fluid rounded" alt="${title}" loading="lazy">
-          </a>
-        `;
-                        gal.appendChild(col);
-                    });
-                }
+            function resolveImage(img, project) {
+                if (!img) return '';
+                if (typeof img === 'string') return img;
+                if (typeof img === 'object') return img.webp || img.jpg || img.src || '';
+                return '';
             }
 
             async function init() {
                 const slug = getSlug();
-                if (!slug) { location.href = '/404.html'; return; }
-
+                const jsonUrl = JSON_URL_DEFAULT; // o data-attr si quieres hacerlo configurable
                 try {
-                    const res = await fetch(JSON_SRC, { cache: 'no-store' });
-                    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+                    const res = await fetch(jsonUrl, { cache: 'no-store' });
+                    if (!res.ok) throw new Error('HTTP ' + res.status);
                     const data = await res.json();
-                    const items = normalizeItems(data);
-                    const project = findProject(items, slug);
+                    const items = Array.isArray(data) ? data : (data.projects || data.items || (data.data && data.data.projects) || []);
+                    const project = pick(items, slug);
 
-                    if (!project) { location.href = '/404.html'; return; }
-                    render(project);
-
-                    // JSON-LD (schema.org) mejorando SEO
-                    const ld = {
-                        "@context": "https://schema.org",
-                        "@type": "CreativeWork",
-                        "name": project.title || project.name,
-                        "description": project.excerpt || project.description,
-                        "image": (project.image && (project.image.jpg || project.image.webp || project.image.src)) || project.image || "",
-                        "url": project.url || location.href
-                    };
-                    const script = document.createElement('script');
-                    script.type = 'application/ld+json';
-                    script.text = JSON.stringify(ld);
-                    document.head.appendChild(script);
-
-                } catch (err) {
-                    console.error('Error cargando proyecto:', err);
-                    location.href = '/404.html';
+                    if (!project) {
+                        // Estado 404 suave
+                        setText('[data-bind="title"]', 'Proyecto no encontrado');
+                        setText('[data-bind="description"]', 'El proyecto solicitado no existe o fue movido.');
+                        document.querySelector('[data-bind-src]')?.remove();
+                        return;
+                    }
+                    fillBindings(project);
+                } catch (e) {
+                    console.error('Error cargando proyecto:', e);
+                    setText('[data-bind="title"]', 'Error al cargar');
+                    setText('[data-bind="description"]', 'No fue posible cargar la información del proyecto.');
                 }
             }
 
