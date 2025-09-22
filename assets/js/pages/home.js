@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // --- Carga dinámica de Proyectos en la página de inicio ---
     if (window.loadProjects) {
-        loadProjects('#home-projects-list', { limit: 3 });
+        loadProjects('#home-projects-list', { limit: 2 });
     }
 
     // --- Carga dinámica de Colaboradores ---

@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="card-body d-flex flex-column">
           <h3 class="h5 card-title mb-2">${title}</h3>
           ${excerpt ? `<p class="card-text text-muted mb-3">${excerpt}</p>` : ''}
-          <div class="d-grid col-12 col-md-6 mt-auto mx-auto mx-md-0">
+          <div class="d-flex justify-content-center justify-content-md-start mt-auto mx-auto mx-md-0">
             ${url && url !== '#' ? `<a href="${url}" class="btn btn-outline-primary btn-sm">Ver proyecto</a>` : ''}
           </div>
         </div>
