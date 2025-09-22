@@ -1,48 +1,172 @@
 /* --- Sección de Héroe para Portafolio --- */
 .portfolio-hero {
-    padding-top: 8rem;
-    padding-bottom: 3rem;
+  padding-top: 8rem;
+  padding-bottom: 3rem;
 }
 
 .portfolio-hero h1 {
-    font-family: var(--font-heading);
-    font-weight: 900;
+  font-family: var(--font-heading);
+  font-weight: 900;
 }
 
 /* --- Galería de Proyectos --- */
 .portfolio-gallery .project-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .portfolio-gallery .project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+  transform: translateY(-5px);
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
 }
 
 .portfolio-gallery .card-img-top {
-    object-fit: cover;
-    height: 250px; /* Altura fija para consistencia visual */
+  object-fit: cover;
+  height: 250px; /* Altura fija para consistencia visual */
 }
 
 .portfolio-gallery .card-title {
-    font-family: var(--font-heading);
-    font-weight: 700;
+  font-family: var(--font-heading);
+  font-weight: 700;
 }
 
 /* Estilos para los botones de filtro */
 .portfolio-gallery .btn-outline-primary {
-    border-width: 2px;
-    font-weight: 600;
-    transition: all 0.3s ease;
+  border-width: 2px;
+  font-weight: 600;
+  transition: all 0.3s ease;
 }
 
 .portfolio-gallery .btn-outline-primary.active,
 .portfolio-gallery .btn-outline-primary:hover {
-    background-color: var(--bs-primary);
-    color: var(--white);
+  background-color: var(--bs-primary);
+  color: var(--white);
 }
 
 /* Estilos para las tarjetas de proyecto filtradas (ocultas por JS) */
 .portfolio-gallery .project-item.hidden {
-    display: none;
+  display: none;
 }
+
+.portfolio-grid-section .card-img-top {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+/* ===========================
+   Portfolio page styles
+   (scopeado por secciones)
+   =========================== */
+
+/* HERO */
+.portfolio-hero-section {
+  background: var(--bs-light);
+  background: linear-gradient(180deg, var(--bs-light) 0%, rgba(0,0,0,0) 100%);
+}
+.portfolio-hero-section .lead {
+  max-width: 68ch;
+  margin-inline: auto;
+}
+
+/* FILTROS */
+#filter-buttons .btn {
+  border-radius: 999px;
+  padding: 0.55rem 1rem;
+  transition: background-color .18s ease, color .18s ease, border-color .18s ease, box-shadow .18s ease;
+}
+#filter-buttons .btn.active,
+#filter-buttons .btn:active {
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
+  color: #fff;
+}
+#filter-buttons .btn:focus-visible {
+  outline: 2px solid var(--bs-primary);
+  outline-offset: 2px;
+}
+
+/* GRID / CARDS */
+.portfolio-grid-section .card {
+  border-radius: 1rem;
+  border: 1px solid var(--bs-border-color);
+  overflow: hidden;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  background: var(--bs-body-bg);
+}
+.portfolio-grid-section .card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 .75rem 1.25rem rgba(0,0,0,.08);
+  border-color: rgba(0,0,0,.06);
+}
+.portfolio-grid-section .card-img-top {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: var(--bs-secondary-bg);
+  display: block;
+}
+
+/* Cuerpo flexible para alinear el botón al fondo */
+.portfolio-grid-section .card-body {
+  display: flex;
+  flex-direction: column;
+  gap: .35rem;
+  padding: 1rem 1rem 1.25rem;
+}
+
+/* Clamp de líneas para uniformar alturas */
+.portfolio-grid-section .card-title {
+  margin: 0 0 .25rem;
+  font-weight: 700;
+  line-height: 1.25;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;              /* ← cambia a 1–3 si quieres */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.portfolio-grid-section .card-text {
+  color: var(--bs-secondary-color);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;              /* ← cambia a 1–3 si quieres */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Botón dentro de la card */
+.portfolio-grid-section .card .btn {
+  align-self: flex-start;
+  margin-top: .25rem;
+}
+
+/* Enfoque accesible si navegan con teclado */
+.portfolio-grid-section .card:focus-within {
+  outline: 2px solid var(--bs-primary);
+  outline-offset: 2px;
+  border-radius: 1rem;
+}
+
+/* Modo oscuro (Bootstrap 5.3: data-bs-theme="dark") */
+[data-bs-theme="dark"] .portfolio-grid-section .card {
+  border-color: rgba(255,255,255,.08);
+  box-shadow: 0 1px 2px rgba(0,0,0,.35);
+}
+[data-bs-theme="dark"] .portfolio-grid-section .card:hover {
+  box-shadow: 0 .75rem 1.25rem rgba(0,0,0,.45);
+  border-color: rgba(255,255,255,.14);
+}
+
+/* Respeto a usuarios con reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-grid-section .card,
+  #filter-buttons .btn {
+    transition: none !important;
+  }
+}
+
+/* Opcional: ajusta el grid en desktop grande */
+@media (min-width: 992px) {
+  /* si quieres 3 col fijas ya las tienes con row-cols-lg-3;
+     añade esto si deseas más denso en XL: */
+  /* .portfolio-grid-section #project-list { grid-template-columns: repeat(3, 1fr); } */
+}
+/* ===========================
+   End of portfolio page styles
+   =========================== */

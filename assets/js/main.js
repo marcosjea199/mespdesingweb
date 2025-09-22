@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="card-body">
           ${title ? `<h3 class="h5 card-title mb-2">${title}</h3>` : ``}
           ${excerpt ? `<p class="card-text text-muted mb-3">${excerpt}</p>` : ``}
-          ${url ? `<a href="${url}" class="btn btn-outline-primary btn-sm">Ver proyecto</a>` : ``}
+          ${url ? `<a href="${url}" class="btn btn-outline-primary btn-sm mx-auto mx-md-0">Ver proyecto</a>` : ``}
         </div>
       </article>
     `;
@@ -96,8 +96,33 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 })();
 
+
 (function () {
-  // Normaliza la estructura del JSON (array plano o anidado)
+  const BREAKPOINTS = [
+    ['xs',   0],
+    ['sm', 576],
+    ['md', 768],
+    ['lg', 992],
+    ['xl',1200],
+    ['xxl',1400],
+  ];
+
+  // Lee el per-slide adecuado según ancho y data-attributes
+  function getPerSlide(el) {
+    const d = el.dataset;
+    let per = parseInt(d.perSlide || d.per || '3', 10); // fallback
+    const w = window.innerWidth;
+
+    for (const [key, min] of BREAKPOINTS) {
+      if (w >= min) {
+        const attr = 'per' + key.charAt(0).toUpperCase() + key.slice(1); // perXs, perSm...
+        if (d[attr]) per = parseInt(d[attr], 10);
+      } else break;
+    }
+    return Math.max(1, per || 3);
+  }
+
+  // Normaliza JSON (array u objetos anidados)
   function normalizeItems(data) {
     if (Array.isArray(data)) return data;
     const paths = [
@@ -112,17 +137,15 @@ document.addEventListener('DOMContentLoaded', function() {
     return [];
   }
 
-  // Obtiene { src, alt } priorizando avatar; fallback a logo/image
+  // Devuelve {src, alt} priorizando avatar
   function resolveAvatarFields(item) {
-    const tryObj = (obj) => {
-      if (!obj || typeof obj !== 'object') return '';
-      return obj.webp || obj.jpg || obj.png || obj.svg || obj.src || '';
-    };
+    const fromObj = (o) => (o && typeof o === 'object')
+      ? (o.webp || o.jpg || o.png || o.svg || o.src || '')
+      : '';
     const src =
-      (typeof item.avatar === 'string' ? item.avatar : tryObj(item.avatar)) ||
-      (typeof item.logo   === 'string' ? item.logo   : tryObj(item.logo))   ||
-      (typeof item.image  === 'string' ? item.image  : tryObj(item.image))  ||
-      '';
+      (typeof item.avatar === 'string' ? item.avatar : fromObj(item.avatar)) ||
+      (typeof item.logo   === 'string' ? item.logo   : fromObj(item.logo))   ||
+      (typeof item.image  === 'string' ? item.image  : fromObj(item.image))  || '';
     const alt =
       (item.avatar && typeof item.avatar === 'object' && item.avatar.alt) ||
       (item.logo   && typeof item.logo   === 'object' && item.logo.alt)   ||
@@ -130,19 +153,19 @@ document.addEventListener('DOMContentLoaded', function() {
     return { src, alt };
   }
 
-  // Divide en trozos de tamaño fijo (para los slides)
+  // Divide en chunks de tamaño fijo
   function chunk(arr, size) {
     const out = [];
     for (let i = 0; i < arr.length; i += size) out.push(arr.slice(i, i + size));
     return out;
   }
 
-  // Crea un slide con 3 colaboradores (o el número indicado)
-  function createSlide(itemsChunk, isActive) {
+  // Crea un slide con N columnas (usa row-cols-N para ajustar exactamente)
+  function createSlide(itemsChunk, isActive, perSlide) {
     const slide = document.createElement('div');
     slide.className = 'carousel-item' + (isActive ? ' active' : '');
     slide.innerHTML = `
-      <div class="row justify-content-center align-items-center g-4 text-center">
+      <div class="row row-cols-${perSlide} g-4 justify-content-center align-items-center text-center">
         ${itemsChunk.map(person => {
           const name = person.name || person.title || 'Colaborador';
           const role = person.role || person.position || '';
@@ -159,77 +182,82 @@ document.addEventListener('DOMContentLoaded', function() {
             ${role ? `<div class="text-muted small">${role}</div>` : ``}
           `;
 
-          return `<div class="col-4">${ url
-            ? `<a href="${url}" target="_blank" rel="noopener" class="d-inline-flex flex-column align-items-center text-decoration-none">${content}</a>`
-            : `<div class="d-inline-flex flex-column align-items-center">${content}</div>`
-          }</div>`;
+          return `<div class="col">
+            ${ url
+              ? `<a href="${url}" target="_blank" rel="noopener" class="d-inline-flex flex-column align-items-center text-decoration-none">${content}</a>`
+              : `<div class="d-inline-flex flex-column align-items-center">${content}</div>`
+            }
+          </div>`;
         }).join('')}
       </div>
     `;
     return slide;
   }
 
-  async function initCollaboratorsCarousel() {
+  function buildCarousel(inner, indicators, items, perSlide) {
+    const chunks = chunk(items, Math.max(1, perSlide));
+    inner.innerHTML = '';
+    chunks.forEach((c, i) => inner.appendChild(createSlide(c, i === 0, perSlide)));
+
+    if (indicators) {
+      indicators.innerHTML = '';
+      chunks.forEach((_, i) => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.setAttribute('data-bs-target', '#collaboratorsCarousel');
+        btn.setAttribute('data-bs-slide-to', String(i));
+        btn.setAttribute('aria-label', `Slide ${i+1}`);
+        if (i === 0) {
+          btn.className = 'active';
+          btn.setAttribute('aria-current', 'true');
+        }
+        indicators.appendChild(btn);
+      });
+    }
+  }
+
+  // Debounce para no reconstruir en cada píxel de resize
+  function debounce(fn, ms) {
+    let t; return (...args) => { clearTimeout(t); t = setTimeout(() => fn(...args), ms); };
+  }
+
+  document.addEventListener('DOMContentLoaded', async function () {
     const inner = document.getElementById('collaborators-slides');
     const indicators = document.getElementById('collaborators-indicators');
     if (!inner) return;
 
-    const src = inner.dataset.src || '/assets/data/collaborators.json';
-    const perSlide = parseInt(inner.dataset.perSlide || '3', 10);
-
-    // Estado de carga inicial
     inner.innerHTML = `
       <div class="carousel-item active">
         <div class="row"><div class="col text-center text-muted py-3">Cargando colaboradores…</div></div>
       </div>`;
 
     try {
+      const src = inner.dataset.src || '/assets/data/collaborators.json';
       const res = await fetch(src, { cache: 'no-store' });
       if (!res.ok) throw new Error('HTTP ' + res.status);
       const data = await res.json();
       const items = normalizeItems(data);
-
       if (!items.length) {
-        inner.innerHTML = `
-          <div class="carousel-item active">
-            <div class="row"><div class="col"><div class="alert alert-warning mb-0">No hay colaboradores disponibles.</div></div></div>
-          </div>`;
+        inner.innerHTML = `<div class="carousel-item active"><div class="row"><div class="col"><div class="alert alert-warning mb-0">No hay colaboradores disponibles.</div></div></div></div>`;
         if (indicators) indicators.innerHTML = '';
         return;
       }
 
-      const chunks = chunk(items, Math.max(1, perSlide));
-      inner.innerHTML = '';
-      chunks.forEach((c, i) => inner.appendChild(createSlide(c, i === 0)));
+      let currentPer = getPerSlide(inner);
+      buildCarousel(inner, indicators, items, currentPer);
 
-      // Indicadores
-      if (indicators) {
-        indicators.innerHTML = '';
-        chunks.forEach((_, i) => {
-          const btn = document.createElement('button');
-          btn.type = 'button';
-          btn.setAttribute('data-bs-target', '#collaboratorsCarousel');
-          btn.setAttribute('data-bs-slide-to', String(i));
-          btn.setAttribute('aria-label', `Slide ${i+1}`);
-          if (i === 0) {
-            btn.className = 'active';
-            btn.setAttribute('aria-current', 'true');
-          }
-          indicators.appendChild(btn);
-        });
-      }
+      // Reconstruye si cambia el breakpoint (y por tanto el per-slide)
+      window.addEventListener('resize', debounce(() => {
+        const next = getPerSlide(inner);
+        if (next !== currentPer) {
+          currentPer = next;
+          buildCarousel(inner, indicators, items, currentPer);
+        }
+      }, 150));
     } catch (err) {
       console.error('Error cargando colaboradores:', err);
-      inner.innerHTML = `
-        <div class="carousel-item active">
-          <div class="row"><div class="col"><div class="alert alert-danger mb-0">No se pudieron cargar los colaboradores.</div></div></div>
-        </div>`;
+      inner.innerHTML = `<div class="carousel-item active"><div class="row"><div class="col"><div class="alert alert-danger mb-0">No se pudieron cargar los colaboradores.</div></div></div></div>`;
       if (indicators) indicators.innerHTML = '';
     }
-  }
-
-  document.addEventListener('DOMContentLoaded', initCollaboratorsCarousel);
+  });
 })();
-
-
-

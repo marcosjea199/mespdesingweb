@@ -1,77 +1,78 @@
 {
-    "projects": [
-  {
-    "title": "Tienda Online Minimal",
-    "excerpt": "Ecommerce rápido con checkout optimizado para conversión.",
-    "url": "/portfolio.html#tienda-online-minimal",
-    "image": {
-      "jpg": "assets/images/og-proy-tienda.jpg",
-      "alt": "Mockup de Tienda Online Minimal"
-    }
-  },
-  {
-    "title": "Salón de Belleza",
-    "excerpt": "Reservas online, recordatorios y gestión de citas.",
-    "url": "/portfolio.html#salon-belleza",
-    "image": {
-      "jpg": "assets/images/og-proy-salon.jpg",
-      "alt": "Sitio web para salón de belleza con reservas"
-    }
-  },
-  {
-    "title": "Coach Personal",
-    "excerpt": "Branding, embudo de leads y automatizaciones.",
-    "url": "/portfolio.html#coach-personal",
-    "image": {
-      "jpg": "assets/images/og-proy-coach.jpg",
-      "alt": "Landing page para coach personal"
-    }
-  },
-  {
-    "title": "Landing App SaaS",
-    "excerpt": "Página de producto con pruebas A/B y métricas.",
-    "url": "/portfolio.html#landing-saas",
-    "image": {
-      "jpg": "assets/images/og-portfolio.jpg",
-      "alt": "Landing de aplicación SaaS"
-    }
-  },
-  {
-    "title": "Restaurante Fusión",
-    "excerpt": "Carta digital, reservas y fotos optimizadas.",
-    "url": "/portfolio.html#restaurante-fusion",
-    "image": {
-      "jpg": "assets/images/og-home.jpg",
-      "alt": "Website de restaurante fusión"
-    }
-  },
-  {
-    "title": "Estudio Fotográfico",
-    "excerpt": "Portfolio visual y sistema de contacto ágil.",
-    "url": "/portfolio.html#estudio-fotografico",
-    "image": {
-      "jpg": "assets/images/og-servicios.jpg",
-      "alt": "Portfolio para estudio fotográfico"
-    }
-  },
-  {
-    "title": "Clínica Dental",
-    "excerpt": "SEO local y solicitud de citas en un clic.",
-    "url": "/portfolio.html#clinica-dental",
-    "image": {
-      "jpg": "assets/images/og-sobre-mi.jpg",
-      "alt": "Sitio web de clínica dental"
-    }
-  },
-  {
-    "title": "Consultora Tech",
-    "excerpt": "Servicios B2B y generación de leads.",
-    "url": "/portfolio.html#consultora-tech",
-    "image": {
-      "jpg": "assets/images/og-default.jpg",
-      "alt": "Sitio de consultoría tecnológica"
-    }
-  }
-]
+  "projects": [{
+      "title": "Tienda Online Minimal",
+      "excerpt": "Ecommerce rápido con checkout optimizado para conversión.",
+      "url": "/portfolio.html#tienda-online-minimal",
+      "image": {
+        "jpg": "assets/images/og-proy-tienda.jpg",
+        "alt": "Mockup de Tienda Online Minimal"
+      },
+      "categories": ["web", "ecommerce"]
+    },
+    {
+      "title": "Salón de Belleza",
+      "excerpt": "Reservas online, recordatorios y gestión de citas.",
+      "url": "/portfolio.html#salon-belleza",
+      "image": {
+        "jpg": "assets/images/og-proy-salon.jpg",
+        "alt": "Sitio web para salón de belleza con reservas"
+      }
+    },
+    {
+      "title": "Coach Personal",
+      "excerpt": "Branding, embudo de leads y automatizaciones.",
+      "url": "/portfolio.html#coach-personal",
+      "image": {
+        "jpg": "assets/images/og-proy-coach.jpg",
+        "alt": "Landing page para coach personal"
+      }
+    },
+    {
+      "title": "Landing App SaaS",
+      "excerpt": "Página de producto con pruebas A/B y métricas.",
+      "url": "/portfolio.html#landing-saas",
+      "image": {
+        "jpg": "assets/images/og-portfolio.jpg",
+        "alt": "Landing de aplicación SaaS"
+      }
+    },
+    {
+      "title": "Restaurante Fusión",
+      "excerpt": "Carta digital, reservas y fotos optimizadas.",
+      "url": "/portfolio.html#restaurante-fusion",
+      "image": {
+        "jpg": "assets/images/og-home.jpg",
+        "alt": "Website de restaurante fusión"
+      }
+    },
+    {
+      "title": "Estudio Fotográfico",
+      "excerpt": "Portfolio visual y sistema de contacto ágil.",
+      "url": "/portfolio.html#estudio-fotografico",
+      "image": {
+        "jpg": "assets/images/og-servicios.jpg",
+        "alt": "Portfolio para estudio fotográfico"
+      },
+      "categories": ["web", "ecommerce"]
 
+    },
+    {
+      "title": "Clínica Dental",
+      "excerpt": "SEO local y solicitud de citas en un clic.",
+      "url": "/portfolio.html#clinica-dental",
+      "image": {
+        "jpg": "assets/images/og-sobre-mi.jpg",
+        "alt": "Sitio web de clínica dental"
+      }
+    },
+    {
+      "title": "Consultora Tech",
+      "excerpt": "Servicios B2B y generación de leads.",
+      "url": "/portfolio.html#consultora-tech",
+      "image": {
+        "jpg": "assets/images/og-default.jpg",
+        "alt": "Sitio de consultoría tecnológica"
+      }
+    }
+  ]
 }

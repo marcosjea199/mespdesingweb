@@ -92,7 +92,7 @@
         </section>
 
         <section class="portfolio-grid-section py-5">
-            <div class="container">
+            <div class="container p-md-5">
                 <div class="text-center mb-5">
                     <div class="btn-group" role="group" id="filter-buttons">
                         <button type="button" class="btn btn-outline-primary active" data-filter="all"
@@ -106,22 +106,14 @@
                     </div>
                 </div>
 
-                <div id="project-list" class="row g-4">
-                </div>
-            </div>
-        </section>
-
-        <section id="portfolio" class="featured-portfolio-section bg-light py-5">
-            <div class="container">
-                <h2 class="display-5 fw-bold text-center mb-5" data-i18n="section_portfolio_titulo">
-                    Mis últimos proyectos
-                </h2>
-
-                <!-- Mismo grid, sin límite: carga todos -->
-                <div id="portfolio-projects-list" class="row row-cols-1 row-cols-sm-2 g-4" data-projects
+                <!-- Conecta la grilla al JSON -->
+                <div id="project-list" class="row row-cols-1 row-cols-sm-2 g-4" data-projects
                     data-src="/assets/data/portfolio/projects.json">
                     <!-- se inyectan las cards desde JSON -->
                 </div>
+                <noscript>
+                    <p class="text-center text-muted mt-3">Activa JavaScript para ver los proyectos.</p>
+                </noscript>
             </div>
         </section>
 
