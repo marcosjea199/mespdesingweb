@@ -170,3 +170,13 @@
 /* ===========================
    End of portfolio page styles
    =========================== */
+
+   /* ===== Portfolio page coherence ===== */
+.portfolio-hero-section {
+  background: linear-gradient(180deg, var(--bs-light) 0%, rgba(0,0,0,0) 100%);
+}
+#project-list .card-img-top { aspect-ratio: 16/9; object-fit: cover; }
+#project-list .card { border-radius: var(--radius-xl); box-shadow: var(--shadow-1); transition: transform .2s var(--easing), box-shadow .2s var(--easing); }
+#project-list .card:hover { transform: translateY(-4px); box-shadow: var(--shadow-2); }
+#filter-buttons .btn { border-radius: 999px; }
+#filter-buttons .btn.active { background: var(--bs-primary); color: #fff; border-color: var(--bs-primary); }

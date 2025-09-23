@@ -1,103 +1,246 @@
-/* --- Reutilizable: Botones --- */
+/* =========================
+   TOKENS / FALLBACKS
+   ========================= */
+:root {
+  /* usa tus vars si existen; si no, cae a Bootstrap */
+  --color-primary: var(--primary-color, var(--bs-primary));
+  --color-primary-rgb: var(--primary-color-rgb, var(--bs-primary-rgb));
+  --easing: var(--easing, cubic-bezier(.2, .8, .2, 1));
+  --radius: .75rem;
+  --radius-lg: 1rem;
+  --navbar-offset: 80px;
+  --project-title-lines: 2;
+  --project-text-lines: 2;
+}
+
+/* =========================
+   BOTONES (reutilizable)
+   ========================= */
+.btn {
+  transition: background-color .18s var(--easing), border-color .18s var(--easing), color .18s var(--easing), box-shadow .18s var(--easing);
+}
+
 .btn-primary {
-    background-color: var(--primary-color);
-    border-color: var(--primary-color);
-    color: #fff;
-    font-weight: bold;
-    border-radius: 50rem;
-    padding: 0.75rem 2rem;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #fff;
+  font-weight: 700;
+  border-radius: 50rem;
+  padding: .75rem 2rem;
+  box-shadow: 0 4px 10px rgba(var(--color-primary-rgb), .15);
 }
 
 .btn-primary:hover,
 .btn-primary:focus {
-    background-color: var(--primary-color-dark);
-    border-color: var(--primary-color-dark);
+  background-color: var(--primary-color-dark, var(--color-primary));
+  border-color: var(--primary-color-dark, var(--color-primary));
+  box-shadow: 0 8px 18px rgba(var(--color-primary-rgb), .20);
 }
 
 .btn-outline-primary {
-    border-radius: 50rem;
-    padding: 0.75rem 2rem;
-    font-weight: bold;
+  border-radius: 50rem;
+  padding: .75rem 2rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:focus {
+  background-color: var(--color-primary);
+  color: #fff;
+  box-shadow: 0 6px 14px rgba(var(--color-primary-rgb), .15);
 }
 
 .btn-lg {
-    padding: 1rem 2.5rem;
+  padding: 1rem 2.5rem;
 }
 
-/* --- Reutilizable: Tarjetas de Proyectos --- */
-.project-card,
-.home-project-card,
-.collaborator-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.project-card:hover,
-.home-project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1) !important;
-}
-
-/* --- Reutilizable: Formulario de Contacto --- */
+/* =========================
+   FORMULARIO (reutilizable)
+   ========================= */
 .form-control {
-    border-radius: 0.5rem;
-    padding: 0.75rem 1rem;
+  border-radius: .5rem;
+  padding: .75rem 1rem;
 }
 
 .form-control:focus {
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 0.25rem rgba(var(--primary-color-rgb), 0.25);
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 .25rem rgba(var(--color-primary-rgb), .25);
 }
 
-/* --- Reutilizable: Badges de Categoría --- */
+/* =========================
+   BADGES (reutilizable)
+   ========================= */
 .badge {
-    text-transform: uppercase;
-    font-size: 0.7rem;
-    font-weight: bold;
-    letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .5px;
 }
 
-/* --- Reutilizable: Sección CTA de Contacto --- */
+/* =========================
+   CTA CONTACTO (reutilizable)
+   ========================= */
 .contact-cta-section {
-    background-color: #253fdb;
-    color: #fff;
-    padding: 6rem 0;
+  background-color: var(--primary-color, #253fdb);
+  color: #fff;
+  padding: 6rem 0;
 }
 
 .contact-cta-section h2 {
-    font-family: var(--font-heading);
-    font-weight: 900;
+  font-family: var(--font-heading, "Montserrat", sans-serif);
+  font-weight: 900;
 }
 
-/* ===== Projects cards (scope: #portfolio) ===== */
+/* =========================
+   NAVBAR (global)
+   ========================= */
+.navbar {
+  transition: background-color .2s var(--easing), box-shadow .2s var(--easing), border-color .2s var(--easing);
+  z-index: 1030;
+}
 
+.navbar.navbar-scrolled {
+  background-color: var(--bs-body-bg) !important;
+  border-bottom: 1px solid var(--bs-border-color);
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .06);
+}
+
+.navbar .navbar-brand {
+  font-weight: 800;
+  letter-spacing: -.01em;
+}
+
+.navbar .navbar-brand img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: .375rem;
+}
+
+.navbar .navbar-toggler:focus {
+  box-shadow: 0 0 0 .25rem rgba(var(--color-primary-rgb), .25);
+}
+
+/* enlaces + subrayado suave */
+.navbar .nav-link {
+  position: relative;
+  padding: .5rem .75rem;
+  transition: color .18s ease;
+}
+
+.navbar .nav-link::after {
+  content: "";
+  position: absolute;
+  left: .75rem;
+  right: .75rem;
+  bottom: .35rem;
+  height: 2px;
+  background: currentColor;
+  opacity: .25;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform .18s ease, opacity .18s ease;
+}
+
+.navbar .nav-link:hover::after {
+  transform: scaleX(1);
+  opacity: .5;
+}
+
+.navbar .nav-link.active,
+.navbar .nav-link[aria-current="page"] {
+  color: var(--bs-primary) !important;
+}
+
+.navbar .nav-link.active::after,
+.navbar .nav-link[aria-current="page"]::after {
+  transform: scaleX(1);
+  opacity: 1;
+}
+
+.navbar a.nav-link:focus-visible {
+  outline: 2px solid var(--bs-primary);
+  outline-offset: 2px;
+  border-radius: .25rem;
+}
+
+@media (min-width: 992px) {
+  .navbar .nav-link {
+    padding-inline: .85rem;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .navbar .navbar-nav .nav-link {
+    padding-block: .65rem;
+    border-top: 1px solid var(--bs-border-color);
+  }
+
+  .navbar .navbar-nav .nav-item:first-child .nav-link {
+    border-top: 0;
+  }
+}
+
+/* anclas con navbar fija */
+[id] {
+  scroll-margin-top: var(--navbar-offset);
+}
+
+/* opcional: navbar overlay sobre hero */
+.navbar.navbar-overlay {
+  background: transparent !important;
+  border-bottom: 1px solid transparent;
+}
+
+.navbar.navbar-overlay.navbar-scrolled {
+  background-color: var(--bs-body-bg) !important;
+  border-bottom-color: var(--bs-border-color);
+}
+
+/* =========================
+   CARDS PROYECTOS (Home + Portfolio)
+   ========================= */
+.project-card,
+.home-project-card,
 #portfolio .card {
   border-radius: 1rem;
   border: 1px solid var(--bs-border-color);
   overflow: hidden;
-  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
   background: var(--bs-body-bg);
+  transition: transform .2s var(--easing), box-shadow .2s var(--easing), border-color .2s var(--easing);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .04);
 }
 
+.project-card:hover,
+.home-project-card:hover,
 #portfolio .card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 .75rem 1.5rem rgba(0,0,0,.08);
-  border-color: rgba(0,0,0,.06);
+  box-shadow: 0 .75rem 1.5rem rgba(0, 0, 0, .08);
+  border-color: rgba(0, 0, 0, .06);
 }
 
+.project-card:focus-within,
+.home-project-card:focus-within,
 #portfolio .card:focus-within {
   outline: 2px solid var(--bs-primary);
   outline-offset: 2px;
 }
 
-/* Imagen consistente 16:9 */
+/* imagen 16:9 */
+.project-card .card-img-top,
+.home-project-card .card-img-top,
 #portfolio .card-img-top {
   aspect-ratio: 16 / 9;
   object-fit: cover;
   display: block;
+  background: var(--bs-secondary-bg);
 }
 
-/* Cuerpo flexible para fijar botón abajo si hay texto largo */
+/* cuerpo flexible + clamps */
+.project-card .card-body,
+.home-project-card .card-body,
 #portfolio .card-body {
   display: flex;
   flex-direction: column;
@@ -105,12 +248,8 @@
   padding: 1rem 1rem 1.25rem;
 }
 
-/* Título y texto con clamp (uniformidad de altura) */
-#portfolio {
-  --project-title-lines: 2;
-  --project-text-lines: 2;
-}
-
+.project-card .card-title,
+.home-project-card .card-title,
 #portfolio .card-title {
   margin: 0 0 .25rem;
   font-weight: 700;
@@ -121,6 +260,8 @@
   overflow: hidden;
 }
 
+.project-card .card-text,
+.home-project-card .card-text,
 #portfolio .card-text {
   color: var(--bs-secondary-color);
   display: -webkit-box;
@@ -129,65 +270,257 @@
   overflow: hidden;
 }
 
-/* Botón alineado al inicio y separado del texto */
+.project-card .btn,
+.home-project-card .btn,
 #portfolio .card .btn {
   align-self: flex-start;
   margin-top: .25rem;
 }
 
-/* Sutilezas */
-#portfolio .card .badge { font-weight: 600; }
-#portfolio .card .list-unstyled > li + li { margin-top: .25rem; }
+#portfolio .card .badge {
+  font-weight: 600;
+}
 
-/* Dark mode (mejora sombras/bordes) */
+#portfolio .card .list-unstyled > li + li {
+  margin-top: .25rem;
+}
+
+/* dark mode sombras */
 @media (prefers-color-scheme: dark) {
+  .project-card:hover,
+  .home-project-card:hover,
   #portfolio .card:hover {
-    box-shadow: 0 .75rem 1.5rem rgba(0,0,0,.35);
-    border-color: rgba(255,255,255,.08);
+    box-shadow: 0 .75rem 1.5rem rgba(0, 0, 0, .35);
+    border-color: rgba(255, 255, 255, .08);
   }
 }
 
-/* Card “virtual” sobre el propio anchor o img */
+/* =========================
+   COLABORADORES (carrusel)
+   compatible con .col y .col-4
+   ========================= */
+#colaboradores .carousel .col > a,
+#colaboradores .carousel .col > div,
 #colaboradores .carousel .col-4 > a,
 #colaboradores .carousel .col-4 > img {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 96px;
+  height: 112px;
   width: 100%;
-  padding: 0.75rem 1rem;
+  padding: .75rem 1rem;
   background: var(--bs-body-bg);
   border: 1px solid var(--bs-border-color);
-  border-radius: 0.75rem;
-  box-shadow: 0 1px 2px rgba(0,0,0,.04);
-  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  border-radius: .75rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .04);
+  transition: transform .18s var(--easing), box-shadow .18s var(--easing), border-color .18s var(--easing), background-color .18s var(--easing);
   text-decoration: none;
 }
 
+#colaboradores .carousel .col > a:hover,
+#colaboradores .carousel .col > div:hover,
 #colaboradores .carousel .col-4 > a:hover,
 #colaboradores .carousel .col-4 > img:hover {
   transform: translateY(-2px);
-  box-shadow: 0 .75rem 1.25rem rgba(0,0,0,.08);
-  border-color: rgba(0,0,0,.08);
+  box-shadow: 0 .75rem 1.25rem rgba(0, 0, 0, .08);
+  border-color: rgba(0, 0, 0, .08);
 }
 
-#colaboradores .carousel .col-4 img {
-  max-height: 40px;
-  width: auto;
-  height: auto;
-  filter: grayscale(100%);
-  opacity: .85;
-  transition: filter .18s, opacity .18s;
-}
-
-#colaboradores .carousel .col-4 > a:hover img,
-#colaboradores .carousel .col-4 > img:hover {
-  filter: none;
-  opacity: 1;
+/* Avatares (personas) */
+#colaboradores img {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: opacity .18s var(--easing), transform .18s var(--easing);
 }
 
 @media (min-width: 768px) {
-  #colaboradores .carousel .col-4 > a,
-  #colaboradores .carousel .col-4 > img { height: 112px; }
-  #colaboradores .carousel .col-4 img { max-height: 56px; }
+  #colaboradores .carousel .col > a,
+  #colaboradores .carousel .col > div {
+    height: 140px;
+  }
+
+  #colaboradores img {
+    width: 88px;
+    height: 88px;
+  }
+}
+
+/* =========================
+   FOOTER (global)
+   ========================= */
+footer {
+  line-height: 1.6;
+}
+
+footer .text-muted {
+  color: var(--bs-secondary-color) !important;
+}
+
+footer a.text-muted:hover {
+  color: var(--bs-body-color) !important;
+  text-decoration: underline;
+}
+
+footer .bi {
+  transition: transform .18s var(--easing), opacity .18s var(--easing);
+}
+
+footer a[aria-label]:hover .bi {
+  transform: translateY(-2px);
+  opacity: .9;
+}
+
+footer hr {
+  border-color: var(--bs-border-color);
+  opacity: 1;
+}
+
+footer.bg-dark a {
+  color: rgba(255, 255, 255, .85);
+}
+
+footer.bg-dark a:hover {
+  color: #fff;
+}
+
+[data-bs-theme="dark"] footer a.text-muted:hover {
+  color: #fff !important;
+}
+
+/* =========================
+   ACCESIBILIDAD
+   ========================= */
+.skip-link {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translateY(-150%);
+  background: var(--bs-primary);
+  color: #fff;
+  padding: .5rem .75rem;
+  border-radius: .5rem;
+  z-index: 9999;
+  transition: transform .15s ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+/* =========================
+   MOTION PREFERENCES
+   ========================= */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
+
+/* ===== Navbar: botones de idioma y modo color ===== */
+.navbar .lang-switcher .btn,
+.navbar .theme-switcher .btn{
+  /* lo que pediste */
+  border-radius: 3px !important;
+  border-width: 1px !important;
+  border-style: solid !important;
+
+  /* coherencia visual con tu navbar */
+  color: var(--navbar-text) !important;     /* #060911 light / #F2F2F2 dark (definido antes) */
+  border-color: currentColor !important;
+  background-color: transparent;
+
+  padding: .375rem .6rem; /* tamaño compacto */
+  line-height: 1;
+  box-shadow: none;
+}
+
+/* separador sutil entre los dos botones de idioma */
+.navbar .lang-switcher .btn + .btn{ margin-left: .25rem; }
+
+/* hover */
+.navbar .lang-switcher .btn:hover,
+.navbar .theme-switcher .btn:hover{
+  background-color: rgba(0,0,0,.06);
+}
+[data-bs-theme="dark"] .navbar .lang-switcher .btn:hover,
+[data-bs-theme="dark"] .navbar .theme-switcher .btn:hover,
+body.dark-mode .navbar .lang-switcher .btn:hover,
+body.dark-mode .navbar .theme-switcher .btn:hover{
+  background-color: rgba(255,255,255,.12);
+}
+
+/* foco accesible */
+.navbar .lang-switcher .btn:focus-visible,
+.navbar .theme-switcher .btn:focus-visible{
+  outline: 2px solid var(--bs-primary);
+  outline-offset: 2px;
+}
+
+/* estado activo/pressed (p. ej. idioma seleccionado o tema actual) */
+.navbar .lang-switcher .btn.active,
+.navbar .lang-switcher .btn[aria-pressed="true"],
+.navbar .theme-switcher .btn.active,
+.navbar .theme-switcher .btn[aria-pressed="true"]{
+  background-color: var(--brand-primary) !important;
+  border-color: var(--brand-primary) !important;
+  color: #fff !important;
+}
+
+/* deshabilitado */
+.navbar .lang-switcher .btn:disabled,
+.navbar .theme-switcher .btn:disabled{
+  opacity: .6; cursor: not-allowed;
+}
+
+/* icono del botón de tema (si usas <i class="bi ...">) */
+.navbar .theme-switcher .btn i{ font-size: 1rem; line-height: 1; }
+
+/* ===== FOOTER: textos light/dark como en el navbar ===== */
+
+/* Base (light) */
+:root{
+  --footer-text: #F2F2F2;
+  --footer-text-rgb: 242, 242, 242;
+}
+
+/* Dark theme (data-bs-theme o clase dark-mode) */
+[data-bs-theme="dark"],
+body.dark-mode{
+  --footer-text: #F2F2F2;
+  --footer-text-rgb: 242, 242, 242;
+}
+
+/* Aplica el color a todo el footer */
+footer{
+  color: var(--footer-text) !important;
+}
+
+/* Enlaces, items, y texto común toman el mismo color base */
+footer a,
+footer .nav-link,
+footer p,
+footer li,
+footer small,
+footer span{
+  color: var(--footer-text) !important;
+}
+
+/* Texto “muted” con la misma base pero suavizado */
+footer .text-muted{
+  color: rgba(var(--footer-text-rgb), .65) !important;
+}
+
+/* Iconos heredan el color del texto */
+footer .bi{
+  color: inherit;
+}
+
+/* (Opcional) Mantener el mismo color en hover/active para un look sobrio */
+footer a:hover,
+footer .nav-link:hover,
+footer a:active,
+footer .nav-link:active{
+  color: var(--footer-text) !important;
 }
