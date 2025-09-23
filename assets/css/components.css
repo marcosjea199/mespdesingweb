@@ -524,3 +524,9 @@ footer a:active,
 footer .nav-link:active{
   color: var(--footer-text) !important;
 }
+
+footer a:hover,
+footer .nav-link:hover{
+  color: var(--brand-primary) !important;
+}
+

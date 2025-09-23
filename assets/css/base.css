@@ -6,172 +6,240 @@
 /* =========================
    1) TOKENS (marca + semánticos)
    ========================= */
-:root{
+:root {
   /* Marca */
   --brand-primary: #253fdb;
-  --brand-dark:    #000031;
+  --brand-dark: #000031;
 
   /* Tipografías */
   --font-heading: 'Montserrat', sans-serif;
-  --font-body:    'Nunito Sans', sans-serif;
+  --font-body: 'Nunito Sans', sans-serif;
 
   /* Paleta utilidades */
-  --neutral-10:#060911;
-  --neutral-40:#F2F2F2;
-  --neutral-60:#FFFFFF;
+  --neutral-10: #060911;
+  --neutral-40: #f2f2f2;
+  --neutral-60: #ffffff;
 
   /* Compat con claves existentes (fallbacks a marca) */
-  --primary-color:      var(--brand-primary);
+  --primary-color: var(--brand-primary);
   --primary-color-dark: var(--brand-dark);
-  --primary-color-rgb:  37, 63, 219; /* rgb de #253fdb */
+  --primary-color-rgb: 37, 63, 219; /* rgb de #253fdb */
 
-  --light-bg:  var(--neutral-40);
-  --primary-bg:var(--brand-primary);
-  --white:     #ffffff;
-  --link-color:var(--brand-primary);
+  --light-bg: var(--neutral-40);
+  --primary-bg: var(--brand-primary);
+  --white: #ffffff;
+  --link-color: var(--brand-primary);
 
   /* Semánticos (superficies/texteo) */
-  --background-color:      var(--neutral-40);
+  --background-color: var(--neutral-40);
   --card-background-color: var(--white);
-  --text-color:            var(--brand-dark);
-  --muted-text-color:      #C3C3C3;
-  --heading-color:         var(--brand-dark);
-  --border-color:          var(--neutral-40);
+  --text-color: var(--brand-dark);
+  --muted-text-color: #c3c3c3;
+  --heading-color: var(--brand-dark);
+  --border-color: var(--neutral-40);
 
   /* Motion + radios + sombras */
   --radius: .75rem;
   --radius-lg: 1rem;
   --radius-xl: 1.25rem;
-  --shadow-1: 0 1px 2px rgba(0,0,0,.06);
-  --shadow-2: 0 .75rem 1.5rem rgba(0,0,0,.10);
-  --easing: cubic-bezier(.2,.8,.2,1);
+  --shadow-1: 0 1px 2px rgba(0, 0, 0, .06);
+  --shadow-2: 0 .75rem 1.5rem rgba(0, 0, 0, .10);
+  --easing: cubic-bezier(.2, .8, .2, 1);
 
   /* Helpers */
   --navbar-offset: 80px;
   --project-title-lines: 2;
-  --project-text-lines:  2;
+  --project-text-lines: 2;
 
   /* Override Bootstrap (si lo usas por variables CSS) */
-  --bs-primary:     var(--brand-primary);
-  --bs-primary-rgb: 37,63,219;
+  --bs-primary: var(--brand-primary);
+  --bs-primary-rgb: 37, 63, 219;
 }
 
 /* =========================
    2) DARK MODE (preferencias + overrides)
    ========================= */
-@media (prefers-color-scheme: dark){
-  :root{
-    --background-color:      var(--brand-dark);
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: var(--brand-dark);
     --card-background-color: #495057;
-    --text-color:            var(--neutral-60);
-    --muted-text-color:      #C3C3C3;
-    --heading-color:         var(--neutral-60);
-    --border-color:          #495057;
-    --shadow-1: 0 1px 2px rgba(0,0,0,.30);
-    --shadow-2: 0 .75rem 1.5rem rgba(0,0,0,.45);
+    --text-color: var(--neutral-60);
+    --muted-text-color: #c3c3c3;
+    --heading-color: var(--neutral-60);
+    --border-color: #495057;
+    --shadow-1: 0 1px 2px rgba(0, 0, 0, .30);
+    --shadow-2: 0 .75rem 1.5rem rgba(0, 0, 0, .45);
   }
 }
 /* Overrides explícitos (prioridad más alta) */
 body.dark-mode,
-[data-bs-theme="dark"]{
-  --background-color:      var(--brand-dark);
+[data-bs-theme="dark"] {
+  --background-color: var(--brand-dark);
   --card-background-color: #495057;
-  --text-color:            var(--neutral-60);
-  --muted-text-color:      #C3C3C3;
-  --heading-color:         var(--neutral-60);
-  --border-color:          #495057;
-  --shadow-1: 0 1px 2px rgba(0,0,0,.30);
-  --shadow-2: 0 .75rem 1.5rem rgba(0,0,0,.45);
+  --text-color: var(--neutral-60);
+  --muted-text-color: #c3c3c3;
+  --heading-color: var(--neutral-60);
+  --border-color: #495057;
+  --shadow-1: 0 1px 2px rgba(0, 0, 0, .30);
+  --shadow-2: 0 .75rem 1.5rem rgba(0, 0, 0, .45);
 }
 
 /* =========================
    3) BASE
    ========================= */
-html { scroll-behavior: smooth; }
-body{
+html {
+  scroll-behavior: smooth;
+}
+
+body {
   background-color: var(--background-color);
   color: var(--text-color);
   font-family: var(--font-body), system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
   text-rendering: optimizeLegibility;
   transition: background-color .3s ease, color .3s ease;
 }
-h1, h2, h3, h4, h5, h6,
-.display-1,.display-2,.display-3,.display-4,.display-5{
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.display-1,
+.display-2,
+.display-3,
+.display-4,
+.display-5 {
   font-family: var(--font-heading);
   font-weight: 900;
   letter-spacing: -0.02em;
   color: var(--heading-color);
 }
-img{ max-width: 100%; height: auto; }
+
+img {
+  max-width: 100%;
+  height: auto;
+}
 
 /* Enfoque accesible */
-:where(a, button, [role="button"], .btn):focus-visible{
+:where(a, button, [role="button"], .btn):focus-visible {
   outline: 2px solid var(--bs-primary);
   outline-offset: 2px;
 }
 
 /* Superficies base */
-.navbar, .footer{ background-color: var(--background-color) !important; }
-.card{
+.navbar,
+.footer {
+  background-color: var(--background-color) !important;
+}
+
+.card {
   background-color: var(--card-background-color);
   border-radius: var(--radius);
   box-shadow: var(--shadow-1);
 }
 
 /* Anclas con navbar fija */
-[id]{ scroll-margin-top: var(--navbar-offset); }
+[id] {
+  scroll-margin-top: var(--navbar-offset);
+}
 
 /* =========================
    4) NAVBAR
    ========================= */
-.navbar{
+.navbar {
   transition: background-color .2s var(--easing), box-shadow .2s var(--easing), border-color .2s var(--easing);
   z-index: 1030;
 }
-.navbar.navbar-scrolled{
+
+.navbar.navbar-scrolled {
   background-color: var(--bs-body-bg, var(--background-color)) !important;
   border-bottom: 1px solid var(--bs-border-color, var(--border-color));
-  box-shadow: 0 .25rem .75rem rgba(0,0,0,.06);
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .06);
 }
-.navbar .navbar-brand{ font-weight: 800; letter-spacing: -.01em; }
-.navbar .navbar-brand img{ width: 40px; height: 40px; object-fit: cover; border-radius: .375rem; }
-.navbar .navbar-toggler:focus{ box-shadow: 0 0 0 .25rem rgba(var(--bs-primary-rgb), .25); }
+
+.navbar .navbar-brand {
+  font-weight: 800;
+  letter-spacing: -.01em;
+}
+
+.navbar .navbar-brand img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: .375rem;
+}
+
+.navbar .navbar-toggler:focus {
+  box-shadow: 0 0 0 .25rem rgba(var(--bs-primary-rgb), .25);
+}
 
 /* Enlaces + subrayado suave */
-.navbar .nav-link{
+.navbar .nav-link {
   position: relative;
   padding: .5rem .75rem;
   transition: color .18s ease;
 }
-.navbar .nav-link::after{
-  content:"";
-  position:absolute; left:.75rem; right:.75rem; bottom:.35rem;
-  height:2px; background: currentColor; opacity:.25;
-  transform: scaleX(0); transform-origin:left center;
+
+.navbar .nav-link::after {
+  content: "";
+  position: absolute;
+  left: .75rem;
+  right: .75rem;
+  bottom: .35rem;
+  height: 2px;
+  background: currentColor;
+  opacity: .25;
+  transform: scaleX(0);
+  transform-origin: left center;
   transition: transform .18s ease, opacity .18s ease;
 }
-.navbar .nav-link:hover::after{ transform: scaleX(1); opacity:.5; }
+
+.navbar .nav-link:hover::after {
+  transform: scaleX(1);
+  opacity: .5;
+}
+
 .navbar .nav-link.active,
-.navbar .nav-link[aria-current="page"]{ color: var(--bs-primary) !important; }
+.navbar .nav-link[aria-current="page"] {
+  color: var(--bs-primary) !important;
+}
+
 .navbar .nav-link.active::after,
-.navbar .nav-link[aria-current="page"]::after{ transform: scaleX(1); opacity:1; }
-.navbar a.nav-link:focus-visible{ border-radius: .25rem; }
+.navbar .nav-link[aria-current="page"]::after {
+  transform: scaleX(1);
+  opacity: 1;
+}
+
+.navbar a.nav-link:focus-visible {
+  border-radius: .25rem;
+}
 
 /* Distribuciones */
-@media (min-width: 992px){
-  .navbar .nav-link{ padding-inline: .85rem; }
+@media (min-width: 992px) {
+  .navbar .nav-link {
+    padding-inline: .85rem;
+  }
 }
-@media (max-width: 991.98px){
-  .navbar .navbar-nav .nav-link{
+
+@media (max-width: 991.98px) {
+  .navbar .navbar-nav .nav-link {
     padding-block: .65rem;
     border-top: 1px solid var(--bs-border-color, var(--border-color));
   }
-  .navbar .navbar-nav .nav-item:first-child .nav-link{ border-top: 0; }
+
+  .navbar .navbar-nav .nav-item:first-child .nav-link {
+    border-top: 0;
+  }
 }
 
 /* Variante overlay opcional (hero transparente) */
-.navbar.navbar-overlay{ background: transparent !important; border-bottom: 1px solid transparent; }
-.navbar.navbar-overlay.navbar-scrolled{
+.navbar.navbar-overlay {
+  background: transparent !important;
+  border-bottom: 1px solid transparent;
+}
+
+.navbar.navbar-overlay.navbar-scrolled {
   background-color: var(--bs-body-bg, var(--background-color)) !important;
   border-bottom-color: var(--bs-border-color, var(--border-color));
 }
@@ -179,10 +247,11 @@ img{ max-width: 100%; height: auto; }
 /* =========================
    5) BOTONES
    ========================= */
-.btn{
+.btn {
   transition: background-color .18s var(--easing), border-color .18s var(--easing), color .18s var(--easing), box-shadow .18s var(--easing);
 }
-.btn-primary{
+
+.btn-primary {
   background-color: var(--primary-color);
   border-color: var(--primary-color);
   color: #fff;
@@ -191,35 +260,42 @@ img{ max-width: 100%; height: auto; }
   padding: .75rem 2rem;
   box-shadow: 0 4px 10px rgba(var(--primary-color-rgb), .15);
 }
+
 .btn-primary:hover,
-.btn-primary:focus{
+.btn-primary:focus {
   background-color: var(--primary-color-dark);
   border-color: var(--primary-color-dark);
   box-shadow: 0 8px 18px rgba(var(--primary-color-rgb), .20);
 }
-.btn-outline-primary{
+
+.btn-outline-primary {
   border-radius: 50rem;
   padding: .75rem 2rem;
   font-weight: 700;
   color: var(--primary-color);
   border-color: var(--primary-color);
 }
+
 .btn-outline-primary:hover,
-.btn-outline-primary:focus{
+.btn-outline-primary:focus {
   background-color: var(--primary-color);
   color: #fff;
   box-shadow: 0 6px 14px rgba(var(--primary-color-rgb), .15);
 }
-.btn-lg{ padding: 1rem 2.5rem; }
+
+.btn-lg {
+  padding: 1rem 2.5rem;
+}
 
 /* =========================
    6) FORMULARIOS
    ========================= */
-.form-control{
+.form-control {
   border-radius: .5rem;
   padding: .75rem 1rem;
 }
-.form-control:focus{
+
+.form-control:focus {
   border-color: var(--primary-color);
   box-shadow: 0 0 0 .25rem rgba(var(--primary-color-rgb), .25);
 }
@@ -227,7 +303,7 @@ img{ max-width: 100%; height: auto; }
 /* =========================
    7) BADGES
    ========================= */
-.badge{
+.badge {
   text-transform: uppercase;
   font-size: .7rem;
   font-weight: 700;
@@ -237,12 +313,13 @@ img{ max-width: 100%; height: auto; }
 /* =========================
    8) CTA CONTACTO
    ========================= */
-.contact-cta-section{
+.contact-cta-section {
   background-color: var(--primary-bg);
   color: #fff;
   padding: 6rem 0;
 }
-.contact-cta-section h2{
+
+.contact-cta-section h2 {
   font-family: var(--font-heading);
   font-weight: 900;
 }
@@ -252,7 +329,7 @@ img{ max-width: 100%; height: auto; }
    ========================= */
 .project-card,
 .home-project-card,
-#portfolio .card{
+#portfolio .card {
   border-radius: 1rem;
   border: 1px solid var(--bs-border-color, var(--border-color));
   overflow: hidden;
@@ -260,16 +337,18 @@ img{ max-width: 100%; height: auto; }
   transition: transform .2s var(--easing), box-shadow .2s var(--easing), border-color .2s var(--easing);
   box-shadow: var(--shadow-1);
 }
+
 .project-card:hover,
 .home-project-card:hover,
-#portfolio .card:hover{
+#portfolio .card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 .75rem 1.5rem rgba(0,0,0,.08);
-  border-color: rgba(0,0,0,.06);
+  box-shadow: 0 .75rem 1.5rem rgba(0, 0, 0, .08);
+  border-color: rgba(0, 0, 0, .06);
 }
+
 .project-card:focus-within,
 .home-project-card:focus-within,
-#portfolio .card:focus-within{
+#portfolio .card:focus-within {
   outline: 2px solid var(--bs-primary);
   outline-offset: 2px;
 }
@@ -277,7 +356,7 @@ img{ max-width: 100%; height: auto; }
 /* Imagen 16:9 */
 .project-card .card-img-top,
 .home-project-card .card-img-top,
-#portfolio .card-img-top{
+#portfolio .card-img-top {
   aspect-ratio: 16 / 9;
   object-fit: cover;
   display: block;
@@ -287,15 +366,16 @@ img{ max-width: 100%; height: auto; }
 /* Cuerpo + clamps */
 .project-card .card-body,
 .home-project-card .card-body,
-#portfolio .card-body{
+#portfolio .card-body {
   display: flex;
   flex-direction: column;
   gap: .5rem;
   padding: 1rem 1rem 1.25rem;
 }
+
 .project-card .card-title,
 .home-project-card .card-title,
-#portfolio .card-title{
+#portfolio .card-title {
   margin: 0 0 .25rem;
   font-weight: 700;
   line-height: 1.25;
@@ -304,18 +384,20 @@ img{ max-width: 100%; height: auto; }
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
 .project-card .card-text,
 .home-project-card .card-text,
-#portfolio .card-text{
+#portfolio .card-text {
   color: var(--bs-secondary-color, var(--muted-text-color));
   display: -webkit-box;
   -webkit-line-clamp: var(--project-text-lines);
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
 .project-card .btn,
 .home-project-card .btn,
-#portfolio .card .btn{
+#portfolio .card .btn {
   align-self: flex-start;
   margin-top: .25rem;
 }
@@ -326,113 +408,528 @@ img{ max-width: 100%; height: auto; }
 #colaboradores .carousel .col > a,
 #colaboradores .carousel .col > div,
 #colaboradores .carousel .col-4 > a,
-#colaboradores .carousel .col-4 > img{
-  display:flex; align-items:center; justify-content:center;
-  height: 112px; width:100%;
-  padding:.75rem 1rem;
+#colaboradores .carousel .col-4 > img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 112px;
+  width: 100%;
+  padding: .75rem 1rem;
   background: var(--bs-body-bg, var(--card-background-color));
-  border:1px solid var(--bs-border-color, var(--border-color));
+  border: 1px solid var(--bs-border-color, var(--border-color));
   border-radius: .75rem;
-  box-shadow: 0 1px 2px rgba(0,0,0,.04);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .04);
   transition: transform .18s var(--easing), box-shadow .18s var(--easing), border-color .18s var(--easing), background-color .18s var(--easing);
   text-decoration: none;
 }
+
 #colaboradores .carousel .col > a:hover,
 #colaboradores .carousel .col > div:hover,
 #colaboradores .carousel .col-4 > a:hover,
-#colaboradores .carousel .col-4 > img:hover{
+#colaboradores .carousel .col-4 > img:hover {
   transform: translateY(-2px);
-  box-shadow: 0 .75rem 1.25rem rgba(0,0,0,.08);
-  border-color: rgba(0,0,0,.08);
+  box-shadow: 0 .75rem 1.25rem rgba(0, 0, 0, .08);
+  border-color: rgba(0, 0, 0, .08);
 }
 
 /* Avatares (personas) */
-#colaboradores img{
-  width:72px; height:72px; object-fit:cover; border-radius:50%;
+#colaboradores img {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 50%;
   transition: opacity .18s var(--easing), transform .18s var(--easing);
 }
-@media (min-width:768px){
+
+@media (min-width: 768px) {
   #colaboradores .carousel .col > a,
-  #colaboradores .carousel .col > div{ height: 140px; }
-  #colaboradores img{ width:88px; height:88px; }
+  #colaboradores .carousel .col > div {
+    height: 140px;
+  }
+
+  #colaboradores img {
+    width: 88px;
+    height: 88px;
+  }
 }
 
 /* =========================
    11) FOOTER
    ========================= */
-footer{ line-height: 1.6; }
-footer .text-muted{ color: var(--bs-secondary-color, var(--muted-text-color)) !important; }
-footer a.text-muted:hover{ color: var(--bs-body-color, var(--text-color)) !important; text-decoration: underline; }
-footer .bi{ transition: transform .18s var(--easing), opacity .18s var(--easing), color .18s var(--easing); }
-footer a[aria-label]:hover .bi{ transform: translateY(-2px); opacity:.9; }
+footer {
+  line-height: 1.6;
+}
+
+footer .text-muted {
+  color: var(--bs-secondary-color, var(--muted-text-color)) !important;
+}
+
+footer a.text-muted:hover {
+  color: var(--bs-body-color, var(--text-color)) !important;
+  text-decoration: underline;
+}
+
+footer .bi {
+  transition: transform .18s var(--easing), opacity .18s var(--easing), color .18s var(--easing);
+}
+
+footer a[aria-label]:hover .bi {
+  transform: translateY(-2px);
+  opacity: .9;
+}
 
 /* Contraste en fondos oscuros */
-footer.bg-dark a{ color: rgba(255,255,255,.85); }
-footer.bg-dark a:hover{ color:#fff; }
+footer.bg-dark a {
+  color: rgba(255, 255, 255, .85);
+}
+
+footer.bg-dark a:hover {
+  color: #fff;
+}
 
 /* Hover acorde a tu marca */
-footer a.text-muted:hover{ color: var(--white) !important; }
-footer .bi:hover{ color: var(--link-color) !important; }
+footer a.text-muted:hover {
+  color: var(--white) !important;
+}
+
+footer .bi:hover {
+  color: var(--link-color) !important;
+}
 
 /* Divisor */
-footer hr{ border-color: var(--bs-border-color, var(--border-color)); opacity:1; }
+footer hr {
+  border-color: var(--bs-border-color, var(--border-color));
+  opacity: 1;
+}
 
 /* =========================
    12) ACCESIBILIDAD & MOTION
    ========================= */
-.skip-link{
-  position:absolute; left:0; top:0; transform: translateY(-150%);
-  background: var(--bs-primary); color:#fff; padding:.5rem .75rem; border-radius:.5rem;
-  z-index:9999; transition: transform .15s ease;
+.skip-link {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translateY(-150%);
+  background: var(--bs-primary);
+  color: #fff;
+  padding: .5rem .75rem;
+  border-radius: .5rem;
+  z-index: 9999;
+  transition: transform .15s ease;
 }
-.skip-link:focus{ transform: translateY(0); }
 
-@media (prefers-reduced-motion: reduce){
-  *{ transition: none !important; }
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
 }
 
 /* ===== NAVBAR: altura fija 90px + colores de texto (light/dark) ===== */
 
 /* Color de texto deseado por tema */
-:root{
+:root {
   --navbar-text: #060911;   /* light */
 }
+
 [data-bs-theme="dark"],
-body.dark-mode{
-  --navbar-text: #F2F2F2;   /* dark */
+body.dark-mode {
+  --navbar-text: #f2f2f2;   /* dark */
 }
 
 /* Altura: exacta en desktop, flexible en móvil para que no se rompa el colapso */
-.navbar{
+.navbar {
   min-height: 90px;                  /* móvil: deja respirar si hay 2 filas */
   --bs-navbar-padding-y: 0;          /* eliminamos padding vertical por defecto */
 }
-@media (min-width: 992px){
-  .navbar{
+
+@media (min-width: 992px) {
+  .navbar {
     height: 90px;                    /* desktop: altura exacta */
   }
 }
 
 /* Aplica color a marca y enlaces de navegación */
 .navbar .navbar-brand,
-.navbar .nav-link{
+.navbar .nav-link {
   color: var(--navbar-text) !important;
 }
 
 /* Opcional: estados (hover/activo) conservando tu color base */
-.navbar .nav-link:hover{
+.navbar .nav-link:hover {
   color: var(--navbar-text) !important;
 }
+
 .navbar .nav-link.active,
-.navbar .nav-link[aria-current="page"]{
+.navbar .nav-link[aria-current="page"] {
   color: var(--navbar-text) !important;
 }
 
 /* (Opcional) Ajuste del toggler para que no desentone en dark/light
    Nota: el ícono del toggler es un SVG de fondo; este truco alinea su color al texto */
-.navbar{
+.navbar {
   --bs-navbar-color: var(--navbar-text);
   --bs-navbar-brand-color: var(--navbar-text);
   --bs-navbar-active-color: var(--navbar-text);
 }
 
+/* =========================================================
+   SECCIONES — sistema de espacios global y coherente
+   ========================================================= */
+
+/* Escala de espacio (8px) — EDITA AQUÍ si quieres otra escala */
+:root {
+  --space-1: .5rem;   /* 8px  */
+  --space-2: .75rem;  /* 12px */
+  --space-3: 1rem;    /* 16px */
+  --space-4: 1.5rem;  /* 24px */
+  --space-5: 2rem;    /* 32px */
+  --space-6: 3rem;    /* 48px */
+  --space-7: 4rem;    /* 64px */
+  --space-8: 6rem;    /* 96px */
+  --space-9: 8rem;    /* 128px */
+  
+  /* .25rem; = 4px  */
+
+  /* Padding vertical por defecto de las secciones — EDITA AQUÍ */
+  --section-space-y-sm: var(--space-7); /* móviles */
+  --section-space-y-lg: var(--space-8); /* desktop */
+}
+
+/* Aplica a TODAS las secciones con la convención “*-section” (tus secciones) */
+section[class*="-section"] {
+  padding-block: var(--section-space-y-sm);
+}
+
+@media (min-width: 992px) {
+  section[class*="-section"] {
+    padding-block: var(--section-space-y-lg);
+  }
+}
+
+/* Héroes / cabeceras: un poco más de aire por defecto (opcional) */
+.about-summary-section,
+.portfolio-hero-section,
+.services-hero-section {
+  --section-space-y-sm: var(--space-8);
+  --section-space-y-lg: var(--space-9);
+}
+
+/* Variantes opcionales por si quieres compactar/expandir sin tocar HTML (añade la clase cuando la necesites) */
+section.is-compact {
+  --section-space-y-sm: var(--space-6);
+  --section-space-y-lg: var(--space-7);
+}
+
+section.is-comfy {
+  --section-space-y-sm: var(--space-8);
+  --section-space-y-lg: var(--space-9);
+}
+
+section.is-roomy {
+  --section-space-y-sm: var(--space-9);
+  --section-space-y-lg: calc(var(--space-9) + 2rem);
+}
+
+/* Ritmo vertical interno: evita dobles espacios arriba/abajo */
+section[class*="-section"] > *:first-child,
+section[class*="-section"] > .container > *:first-child {
+  margin-top: 0 !important;
+}
+
+section[class*="-section"] > *:last-child,
+section[class*="-section"] > .container > *:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* Títulos y subtítulos de sección coherentes */
+section[class*="-section"] .section-title,
+section[class*="-section"] h2 {
+  margin-bottom: var(--space-3);
+}
+
+section[class*="-section"] .section-subtitle,
+section[class*="-section"] .lead {
+  margin-top: var(--space-2);
+  margin-bottom: var(--space-6);
+  color: var(--bs-secondary-color, var(--muted-text-color));
+  max-width: 72ch;
+}
+
+/* Grids dentro de secciones: conserva Bootstrap pero suaviza el gap vertical en móviles */
+@media (max-width: 575.98px) {
+  section[class*="-section"] .row {
+    /* no pisa .g-* de Bootstrap en desktop; solo suaviza en XS */
+    --bs-gutter-y: 1rem;
+  }
+}
+
+/* Espaciado de botones en fila (por si no usas .btn-group) */
+section[class*="-section"] .btn + .btn {
+  margin-left: .5rem;
+}
+
+@media (max-width: 575.98px) {
+  section[class*="-section"] .btn + .btn {
+    margin-left: .25rem;
+  }
+}
+
+/* Cards dentro de secciones: separaciones consistentes */
+section[class*="-section"] .card {
+  margin: 0; /* evita márgenes residuales */
+}
+
+section[class*="-section"] .card + .card {
+  /* cuando las cards no están en .row, da respiro */
+  margin-top: var(--space-4);
+}
+
+/* Secciones con fondo (para que no “choquen” con la siguiente) */
+section[class*="-section"].bg-light,
+section[class*="-section"][class*="bg-"] {
+  border-bottom: 1px solid var(--bs-border-color, var(--border-color));
+}
+
+/* Modo oscuro: mantiene proporciones de espacio sin tocar colores */
+[data-bs-theme="dark"] section[class*="-section"],
+body.dark-mode section[class*="-section"] {
+  /* no cambia espacios; sólo conservamos coherencia si quisieras ajustes */
+}
+
+/* =========================================================
+   ANCHO GLOBAL DEL SITIO (containers Bootstrap)
+   ========================================================= */
+
+/* EDITA AQUÍ: ancho máximo y gutters */
+:root{
+  /* ancho máximo del contenido */
+  --site-max-w: 1200px;          /* ej: 1140px, 1280px, 1440px, etc. */
+
+  /* gutters (padding lateral interno de los containers) */
+  --site-gutter-x: 1rem;         /* base móvil */
+}
+@media (min-width: 576px){ :root{ --site-gutter-x: 1.25rem; } }
+@media (min-width: 992px){ :root{ --site-gutter-x: 1.5rem; } }
+
+/* Aplica a todos los tamaños de container de Bootstrap */
+.container,
+.container-sm,
+.container-md,
+.container-lg,
+.container-xl,
+.container-xxl{
+  width: 100%;
+  max-width: var(--site-max-w);
+  padding-left:  var(--site-gutter-x);
+  padding-right: var(--site-gutter-x);
+}
+
+/* =========================================================
+   UTILIDADES OPCIONALES (por sección, sin tocar HTML interno)
+   ========================================================= */
+
+/* más estrecho / más ancho / a todo lo ancho (se lo pones a la <section> que quieras) */
+section.is-narrow { --site-max-w: 1040px; }
+section.is-wide   { --site-max-w: 1440px; }
+section.is-full   { --site-max-w: none; }     /* cuidado: usa .container-fluid si quieres full-bleed real */
+
+/* Si quieres un “máximo fluido” según viewport sin perder límite superior: */
+/* Sustituye la regla de .container* por esta variante CLAMP (opcional) */
+/*
+.container,
+.container-sm,
+.container-md,
+.container-lg,
+.container-xl,
+.container-xxl{
+  width: 100%;
+  max-width: clamp(320px, 92vw, var(--site-max-w));
+  padding-left:  var(--site-gutter-x);
+  padding-right: var(--site-gutter-x);
+}
+*/
+
+/* =========================================================
+   TIPOGRAFÍA GLOBAL — tamaños + colores (light/dark)
+   ========================================================= */
+
+/* === EDITA AQUÍ (tokens de color tipográfico) === */
+:root{
+  --heading-color: #000031;   /* títulos en light */
+  --text-color:    #060911;   /* texto base en light */
+  --muted-text-color: #6c757d;
+
+  --link-color:        var(--brand-primary);   /* enlaces en light */
+  --link-hover-color:  #1e33b9;               /* hover (opcional) */
+  --link-visited-color:#5a4dd8;               /* visited (opcional) */
+
+  /* escala de tamaños fluida (clamp) — ajusta a gusto */
+  --fs-display: clamp(2.6rem, 2rem + 2vw, 3.6rem);
+  --fs-h1:      clamp(2.2rem, 1.8rem + 1.4vw, 3rem);
+  --fs-h2:      clamp(1.8rem, 1.5rem + 1vw,  2.25rem);
+  --fs-h3:      clamp(1.5rem, 1.3rem + .7vw, 1.8rem);
+  --fs-h4:      clamp(1.25rem,1.15rem + .4vw,1.4rem);
+  --fs-h5:      1.125rem;
+  --fs-h6:      1rem;
+
+  --fs-body:    1rem;
+  --fs-lead:    clamp(1.05rem, .95rem + .4vw, 1.25rem);
+  --fs-small:   .9375rem;
+
+  /* interlineados y espaciado vertical */
+  --lh-tight: 1.15;
+  --lh-head:  1.2;
+  --lh-body:  1.65;
+
+  --space-2: .5rem;
+  --space-3: .75rem;
+  --space-4: 1rem;
+  --space-6: 2rem;
+}
+
+/* Dark: hereda de tus modos (data-bs-theme/ .dark-mode) */
+[data-bs-theme="dark"],
+body.dark-mode{
+  --heading-color: #F2F2F2;
+  --text-color:    #F2F2F2;
+  --muted-text-color: rgba(242,242,242,.7);
+
+  /* enlaces en dark (ajusta si quieres otro matiz) */
+  --link-color:        #AEBBFF;   /* más claro para contraste */
+  --link-hover-color:  #D9DEFF;
+  --link-visited-color:#C4CBFF;
+}
+
+/* ===== Títulos ===== */
+h1, h2, h3, h4, h5, h6{
+  color: var(--heading-color);
+  font-family: var(--font-heading, "Montserrat", sans-serif);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: var(--lh-head);
+  margin-top: 0;
+  margin-bottom: var(--space-3);
+}
+h1{ font-size: var(--fs-h1); }
+h2{ font-size: var(--fs-h2); }
+h3{ font-size: var(--fs-h3); }
+h4{ font-size: var(--fs-h4); }
+h5{ font-size: var(--fs-h5); }
+h6{ font-size: var(--fs-h6); }
+
+/* Displays de Bootstrap alineados a la escala */
+.display-1{ font-size: calc(var(--fs-display) * 1.25); line-height: var(--lh-tight); }
+.display-2{ font-size: var(--fs-display);              line-height: var(--lh-tight); }
+.display-3{ font-size: calc(var(--fs-h1) * 1.2);       line-height: var(--lh-tight); }
+.display-4{ font-size: calc(var(--fs-h1) * 1.1);       line-height: var(--lh-tight); }
+.display-5{ font-size: var(--fs-h1);                   line-height: var(--lh-tight); }
+
+/* ===== Texto base ===== */
+body, p, li, dd, dt{
+  color: var(--text-color);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+}
+p{ margin-top: 0; margin-bottom: var(--space-4); }
+.lead{
+  font-size: var(--fs-lead);
+  color: var(--bs-secondary-color, var(--muted-text-color));
+  line-height: calc(var(--lh-body) - .05);
+}
+small, .small{ font-size: var(--fs-small); }
+
+/* Listas: margen coherente */
+ul, ol{ margin-bottom: var(--space-4); }
+ul ul, ol ol{ margin-bottom: 0; }
+
+/* Texto atenuado */
+.text-muted{ color: var(--bs-secondary-color, var(--muted-text-color)) !important; }
+
+/* ===== Enlaces (global) ===== */
+a{
+  color: var(--link-color);
+  text-decoration-thickness: .08em;
+  text-underline-offset: .18em;
+  transition: color .18s var(--easing), text-decoration-color .18s var(--easing);
+}
+a:hover{
+  color: var(--link-hover-color);
+  text-decoration-color: currentColor;
+}
+a:visited{
+  color: var(--link-visited-color);
+}
+/* accesibilidad: foco visible sin “bailar” layout */
+a:focus-visible{
+  outline: 2px solid var(--bs-primary, var(--brand-primary));
+  outline-offset: 2px;
+  border-radius: .125rem;
+}
+
+/* ===== Elementos tipográficos extra ===== */
+blockquote{
+  margin: var(--space-6) 0;
+  padding: var(--space-3) var(--space-4);
+  border-left: 3px solid var(--link-color);
+  background: color-mix(in srgb, var(--link-color) 6%, transparent);
+  color: var(--text-color);
+}
+code, kbd, pre, samp{
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: .95em;
+}
+
+/* ===== SINCRONIZA TIPOGRAFÍA + NAVBAR + FOOTER PARA LIGHT/DARK ===== */
+
+/* Light por defecto */
+:root{
+  /* Colores globales de tipografía */
+  --heading-color: #000031;   /* títulos */
+  --text-color:    #060911;   /* cuerpo */
+
+  /* Enlaces (light) */
+  --link-color:         var(--brand-primary);
+  --link-hover-color:   #1e33b9;
+  --link-visited-color: #5a4dd8;
+
+  /* Navbar/Footer heredan del texto global */
+  --navbar-text: var(--text-color);
+  --footer-text: var(--text-color);
+}
+
+/* Dark por data-bs-theme o clase .dark-mode */
+[data-bs-theme="dark"],
+body.dark-mode{
+  --heading-color: #F2F2F2;
+  --text-color:    #F2F2F2;
+
+  /* Enlaces (dark) */
+  --link-color:         #AEBBFF;
+  --link-hover-color:   #D9DEFF;
+  --link-visited-color: #C4CBFF;
+
+  /* Mantén navbar/footer sincronizados */
+  --navbar-text: var(--text-color);
+  --footer-text: var(--text-color);
+}
+
+/* Aplica en componentes (si no lo tenías ya): */
+.navbar .navbar-brand,
+.navbar .nav-link{ color: var(--navbar-text) !important; }
+
+footer,
+footer a,
+footer .nav-link,
+footer p,
+footer li,
+footer small,
+footer span{ color: var(--footer-text) !important; }
+
+/* Enlaces globales (respetan tokens por tema) */
+a{ color: var(--link-color); }
+a:hover{ color: var(--link-hover-color); }
+a:visited{ color: var(--link-visited-color); }
