@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Política de Privacidad | Marcos Espinoza</title>
+
+    <!-- SEO Meta Tags -->
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta property="og:title" content="">
@@ -19,63 +22,94 @@
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="">
 
+    <!-- Bootstrap Styles-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Nunito+Sans:opsz,wght@6..12,400;6..12,700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Nunito+Sans:opsz,wght@6..12,400;6..12,700&display=swap"
+        rel="stylesheet">
 
+    <!-- Custom CSS -->
     <link href="../assets/css/base.css" rel="stylesheet">
     <link href="../assets/css/components.css" rel="stylesheet">
     <link href="../assets/css/pages/legales.css" rel="stylesheet">
 
+    <!-- Scripts -->
     <script src="../assets/js/seo.js" defer></script>
     <script src="../assets/js/i18n.js"></script>
     <script src="../assets/js/theme.js"></script>
 </head>
+
 <body data-page-id="politica-privacidad">
 
     <header>
+        <!-- NavBar -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-sm py-3">
             <div class="container">
-                <a class="navbar-brand" href="../index.html">
-                    <img src="../assets/images/logos/logo-1.webp" alt="Logo de Marcos Espinoza" width="40" height="40" class="d-inline-block align-text-middle me-2">
+                <a class="navbar-brand" href="index.html">
+                    <img src="assets/images/logos/logo-1.webp" alt="Logo de Marcos Espinoza" width="40" height="40"
+                        class="d-inline-block align-text-middle me-2">
                     <span class="fw-bold">Marcos Espinoza</span>
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="../servicios.html">Servicios</a></li>
-                        <li class="nav-item"><a class="nav-link" href="../portfolio.html">Portafolio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="../sobre-mi.html">Sobre Mí</a></li>
-                        <li class="nav-item"><a class="nav-link" href="../contacto.html">Contacto</a></li>
+                        <li class="nav-item"><a class="nav-link" href="servicios.html"
+                                data-i18n="nav_servicios">Servicios</a></li>
+                        <li class="nav-item"><a class="nav-link" href="portfolio.html"
+                                data-i18n="nav_portfolio">Portafolio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="sobre-mi.html" data-i18n="nav_sobre_mi">Sobre
+                                Mí</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contacto.html"
+                                data-i18n="nav_contacto">Contacto</a></li>
                     </ul>
+                    <div class="lang-switcher ms-3 d-flex align-items-center">
+                        <button class="btn btn-sm btn-outline-secondary me-2" data-lang="es">ES</button>
+                        <button class="btn btn-sm btn-outline-secondary" data-lang="en">EN</button>
+                    </div>
+                    <div class="theme-switcher d-flex align-items-center ms-3">
+                        <button id="theme-toggle" class="btn btn-sm btn-outline-secondary">
+                            <i class="bi bi-moon-fill"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
         </nav>
+        <!-- // end NavBar // -->
     </header>
 
     <main>
+        <!-- Legal Hero Section -->
         <section class="legal-hero text-center py-5 bg-light">
             <div class="container">
                 <h1 class="display-4 fw-bold">Política de Privacidad</h1>
             </div>
         </section>
+        <!-- end Legal Hero -->
 
+        <!-- Legal Content Section -->
         <section class="legal-content py-5">
             <div class="container">
                 <p>Fecha de entrada en vigor: 09 de septiembre de 2025</p>
-                <p>Marcos Espinoza ("nosotros", "nuestro", "nuestros") opera el sitio web. Esta página te informa sobre nuestras políticas relativas a la recopilación, uso y divulgación de datos personales cuando usas nuestro Servicio y las opciones que tienes asociadas a esos datos.</p>
+                <p>Marcos Espinoza ("nosotros", "nuestro", "nuestros") opera el sitio web. Esta página te informa sobre
+                    nuestras políticas relativas a la recopilación, uso y divulgación de datos personales cuando usas
+                    nuestro Servicio y las opciones que tienes asociadas a esos datos.</p>
 
                 <h2 class="mt-5 mb-3 fw-bold">Recopilación y Uso de la Información</h2>
                 <p>Recopilamos varios tipos de información con el fin de proporcionar y mejorar nuestro Servicio.</p>
 
                 <h3 class="mt-4 fw-bold">Tipos de datos recopilados</h3>
                 <h4 class="mt-3">Datos personales</h4>
-                <p>Mientras usas nuestro Servicio, podemos pedirte que nos proporciones cierta información de identificación personal que puede ser usada para contactarte o identificarte ("Datos personales"). La información de identificación personal puede incluir, pero no está limitada a:</p>
+                <p>Mientras usas nuestro Servicio, podemos pedirte que nos proporciones cierta información de
+                    identificación personal que puede ser usada para contactarte o identificarte ("Datos personales").
+                    La información de identificación personal puede incluir, pero no está limitada a:</p>
                 <ul>
                     <li>Dirección de correo electrónico</li>
                     <li>Nombre y apellido</li>
@@ -84,14 +118,19 @@
                 </ul>
 
                 <h4 class="mt-3">Datos de uso</h4>
-                <p>También podemos recopilar información sobre cómo se accede y se utiliza el Servicio ("Datos de uso"). Estos Datos de uso pueden incluir información como la dirección de Protocolo de Internet de tu ordenador (ej. dirección IP), el tipo de navegador, la versión del navegador, las páginas de nuestro Servicio que visitas, la hora y fecha de tu visita, el tiempo que pasas en esas páginas, identificadores únicos del dispositivo y otros datos de diagnóstico.</p>
-                
+                <p>También podemos recopilar información sobre cómo se accede y se utiliza el Servicio ("Datos de uso").
+                    Estos Datos de uso pueden incluir información como la dirección de Protocolo de Internet de tu
+                    ordenador (ej. dirección IP), el tipo de navegador, la versión del navegador, las páginas de nuestro
+                    Servicio que visitas, la hora y fecha de tu visita, el tiempo que pasas en esas páginas,
+                    identificadores únicos del dispositivo y otros datos de diagnóstico.</p>
+
                 <h2 class="mt-5 mb-3 fw-bold">Uso de los datos</h2>
                 <p>Marcos Espinoza utiliza los datos recopilados para varios fines:</p>
                 <ul>
                     <li>Para proporcionar y mantener el Servicio</li>
                     <li>Para notificarte sobre cambios en nuestro Servicio</li>
-                    <li>Para permitirte participar en funciones interactivas de nuestro Servicio cuando decidas hacerlo</li>
+                    <li>Para permitirte participar en funciones interactivas de nuestro Servicio cuando decidas hacerlo
+                    </li>
                     <li>Para proporcionar atención al cliente y soporte</li>
                     <li>Para proporcionar análisis o información valiosa para que podamos mejorar el Servicio</li>
                     <li>Para monitorizar el uso del Servicio</li>
@@ -100,7 +139,8 @@
 
                 <h2 class="mt-5 mb-3 fw-bold">Divulgación de datos</h2>
                 <p>No venderemos ni alquilaremos tus datos personales a terceros.</p>
-                <p>Podemos divulgar tus datos personales de buena fe cuando creamos que dicha acción es necesaria para:</p>
+                <p>Podemos divulgar tus datos personales de buena fe cuando creamos que dicha acción es necesaria para:
+                </p>
                 <ul>
                     <li>Cumplir con una obligación legal</li>
                     <li>Proteger y defender los derechos o propiedad de Marcos Espinoza</li>
@@ -110,53 +150,81 @@
                 </ul>
 
                 <h2 class="mt-5 mb-3 fw-bold">Seguridad de los datos</h2>
-                <p>La seguridad de tus datos es importante para nosotros, pero recuerda que ningún método de transmisión por Internet o método de almacenamiento electrónico es 100% seguro.</p>
+                <p>La seguridad de tus datos es importante para nosotros, pero recuerda que ningún método de transmisión
+                    por Internet o método de almacenamiento electrónico es 100% seguro.</p>
 
                 <h2 class="mt-5 mb-3 fw-bold">Tus derechos de protección de datos</h2>
-                <p>Tienes ciertos derechos de protección de datos. Si deseas ser informado sobre los Datos personales que tenemos sobre ti y si deseas que se eliminen de nuestros sistemas, por favor, contáctanos.</p>
+                <p>Tienes ciertos derechos de protección de datos. Si deseas ser informado sobre los Datos personales
+                    que tenemos sobre ti y si deseas que se eliminen de nuestros sistemas, por favor, contáctanos.</p>
             </div>
         </section>
+        <!-- end Legal Content -->
     </main>
 
     <footer class="bg-dark text-white pt-5 pb-4">
+        <!-- Footer -->
         <div class="container">
+            <!-- Footer -->
             <div class="row">
                 <div class="col-md-4 mb-4">
                     <div class="d-flex align-items-center mb-3">
-                        <img src="../assets/images/logos/logo-1.webp" alt="Logo de Marcos Espinoza" width="40" height="40" class="me-2">
-                        <span class="fs-4 fw-bold">Marcos Espinoza</span>
+                        <img src="assets/images/logos/logo-1.webp" alt="Logo de Marcos Espinoza" width="40" height="40"
+                            class="me-2">
+                        <span class="fs-4 fw-bold" data-i18n="footer_titulo">Marcos Espinoza</span>
                     </div>
-                    <p class="text-muted">Desarrollo y diseño web profesional para ayudarte a crecer.</p>
+                    <p class="text-muted" data-i18n="footer_parrafo">Desarrollo y diseño web profesional para ayudarte a
+                        crecer.</p>
                 </div>
                 <div class="col-md-4 mb-4">
-                    <h5 class="fw-bold mb-3">Enlaces Rápidos</h5>
+                    <h5 class="fw-bold mb-3" data-i18n="footer_enlaces_rapidos">Enlaces Rápidos</h5>
                     <ul class="list-unstyled">
-                        <li class="mb-2"><a href="../servicios.html" class="text-decoration-none text-muted">Servicios</a></li>
-                        <li class="mb-2"><a href="../portfolio.html" class="text-decoration-none text-muted">Portafolio</a></li>
-                        <li class="mb-2"><a href="../sobre-mi.html" class="text-decoration-none text-muted">Sobre Mí</a></li>
-                        <li class="mb-2"><a href="../contacto.html" class="text-decoration-none text-muted">Contacto</a></li>
+                        <li class="mb-2"><a href="servicios.html" class="text-decoration-none text-muted"
+                                data-i18n="nav_servicios">Servicios</a></li>
+                        <li class="mb-2"><a href="portfolio.html" class="text-decoration-none text-muted"
+                                data-i18n="nav_portfolio">Portafolio</a></li>
+                        <li class="mb-2"><a href="sobre-mi.html" class="text-decoration-none text-muted"
+                                data-i18n="nav_sobre_mi">Sobre Mí</a></li>
+                        <li class="mb-2"><a href="contacto.html" class="text-decoration-none text-muted"
+                                data-i18n="nav_contacto">Contacto</a></li>
                     </ul>
                 </div>
                 <div class="col-md-4 mb-4">
-                    <h5 class="fw-bold mb-3">Sígueme</h5>
-                    <a href="https://www.linkedin.com/in/marcosjea199/" class="text-decoration-none me-3" aria-label="LinkedIn"><i class="bi bi-linkedin fs-4 text-white"></i></a>
-                    <a href="https://github.com/marcosjea199" class="text-decoration-none me-3" aria-label="GitHub"><i class="bi bi-github fs-4 text-white"></i></a>
-                    <a href="https://instagram.com/mespdesingweb" class="text-decoration-none" aria-label="Instagram"><i class="bi bi-instagram fs-4 text-white"></i></a>
-                    <a href="https://x.com/mespdesingweb" class="text-decoration-none" aria-label="Twitter"><i class="bi bi-twitter-x fs-4 text-white"></i></a>
+                    <h5 class="fw-bold mb-3" data-i18n="footer_sigueme">Sígueme</h5>
+                    <a href="#" class="text-decoration-none me-3" aria-label="LinkedIn"><i
+                            class="bi bi-linkedin fs-4 text-white"></i></a>
+                    <a href="#" class="text-decoration-none me-3" aria-label="GitHub"><i
+                            class="bi bi-github fs-4 text-white"></i></a>
+                    <a href="#" class="text-decoration-none me-3" aria-label="Instagram"><i
+                            class="bi bi-instagram fs-4 text-white"></i></a>
+                    <a href="#" class="text-decoration-none me-3" aria-label="Twitter"><i
+                            class="bi bi-twitter-x fs-4 text-white"></i></a>
                 </div>
             </div>
+            <!-- // end // -->
+
+            <!-- Copyright -->
             <hr class="border-secondary mt-2 mb-3">
-            <div class="text-center">
-                <p class="mb-0 text-muted">© 2025 Marcos Espinoza. Todos los derechos reservados.</p>
-                <a href="politica-privacidad.html" class="text-muted me-3">Política de Privacidad</a>
-                <a href="terminos-condiciones.html" class="text-muted me-3">Términos y Condiciones</a>
-                <a href="cookies.html" class="text-muted">Política de Cookies</a>
+            <div>
+                <div class="row align-content-center align-items-center justify-content-around">
+                    <div class="col-md-6 md-6">
+                        <p class="mb-0 text-muted" data-i18n="footer_copyright">© 2025 Marcos Espinoza. Todos los
+                            derechos reservados.</p>
+                    </div>
+                    <div class="col-md-6 md-6 d-flex justify-content-end">
+                        <a href="legal/politica-privacidad.html" class="text-muted me-3">Política de Privacidad</a>
+                        <a href="legal/terminos-condiciones.html" class="text-muted me-3">Términos y Condiciones</a>
+                        <a href="legal/cookies.html" class="text-muted">Política de Cookies</a>
+                    </div>
+                </div>
             </div>
+            <!-- // end copyright // -->
         </div>
+        <!-- // end footer // -->
     </footer>
 
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
+    <!-- Bootstrap & Custom Sripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../assets/js/main.js"></script>
 </body>
+
 </html>
